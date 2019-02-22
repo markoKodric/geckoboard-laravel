@@ -1,0 +1,36 @@
+{
+    "name": "mare06xa/geckoboard",
+    "description": "Geckoboard bridge package.",
+    "keywords": ["Laravel", "Geckoboard"],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/support": "~5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marko Kodrič",
+            "email": "marko.kodric9@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mare06xa\\Geckoboard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mare06xa\\Geckoboard\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mare06xa\\Geckoboard\\src\\GeckoboardServiceProvider"
+            ],
+            "aliases": {
+                "Geckoboard": "Mare0xa\\Geckoboard\\Facades\\Geckoboard"
+            }
+        }
+    }
+}
