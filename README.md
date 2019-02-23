@@ -62,7 +62,6 @@ class SomeClass
         $widget->firstMethod()
                ->secondMethod();
         
-        // Returns GuzzleHttp\Psr7\Response object or throws ClientException...
         $apiResponse = $widget->push();
     }
 }
