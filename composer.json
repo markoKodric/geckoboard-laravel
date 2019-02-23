@@ -1,6 +1,6 @@
 {
     "name": "mare06xa/geckoboard",
-    "description": "Geckoboard bridge package.",
+    "description": "Geckoboard - Laravel bridge.",
     "keywords": ["Laravel", "Geckoboard"],
     "require": {
         "guzzlehttp/guzzle": "^6.3",
