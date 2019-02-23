@@ -40,7 +40,8 @@ class BarChart extends Widget
     {
         $widgetData = [
             'x_axis' => [
-                'labels' => $this->xAxis->getLabels()
+                'labels' => $this->xAxis->getLabels(),
+                'type'   => $this->xAxis->getFormat()
             ],
             'y_axis' => [
                 'format' => $this->yAxis->getFormat()

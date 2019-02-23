@@ -16,9 +16,13 @@ class yAxis
         $this->format = Format::DECIMAL;
     }
 
-    public function setFormat($format)
+    public function setFormat(string $format)
     {
         $this->format = $format;
+
+        if ($format !== Format::CURRENCY) {
+            $this->unit = null;
+        }
 
         return $this;
     }
@@ -30,7 +34,7 @@ class yAxis
      * @param string $unit
      * @return yAxis
      */
-    public function setCurrency($unit)
+    public function setCurrency(string $unit)
     {
         $this->format = Format::CURRENCY;
         $this->unit   = $unit;
@@ -53,12 +57,7 @@ class yAxis
         return $this->unit;
     }
 
-    /**
-     * @param array $data
-     * @param string $name
-     * @return yAxis
-     */
-    public function addData($data, $name = "")
+    public function addData(array $data, string $name = "")
     {
         $this->data[] = [
             "name" => $name,

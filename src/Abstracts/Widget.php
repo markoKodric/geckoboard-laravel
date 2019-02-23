@@ -15,14 +15,40 @@ abstract class Widget
     abstract public    function __construct();
     abstract protected function prepareData(): array;
 
+    /**
+     * @param $widgetID
+     * @throws \Exception
+     */
     function setID($widgetID)
     {
-        $this->widgetID = $widgetID;
+        $widgetIdEmpty = empty(trim($widgetID));
+
+        if ($widgetIdEmpty) {
+            throw new \Exception('Widget ID must not be empty.');
+        }
+
+        $widgetIdWrongFormat = !preg_match("/^([a-z0-9]+-)*[a-z0-9]+$/i", trim($widgetID));
+
+        if ($widgetIdWrongFormat) {
+            throw new \Exception('Widget ID is in wrong format.');
+        }
+
+        $this->widgetID = trim($widgetID);
     }
 
+    /**
+     * @param $apiToken
+     * @throws \Exception
+     */
     function setApiToken($apiToken)
     {
-        $this->apiToken = $apiToken;
+        $apiTokenEmpty = empty(trim($apiToken));
+
+        if ($apiTokenEmpty) {
+            throw new \Exception('API token must not be empty.');
+        }
+
+        $this->apiToken = trim($apiToken);
     }
 
     /**

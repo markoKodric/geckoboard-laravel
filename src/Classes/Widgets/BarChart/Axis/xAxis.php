@@ -8,14 +8,14 @@ class xAxis
     protected $labels;
     protected $type = "";
 
-    public function setFormat($format)
+    public function setFormat(string $format)
     {
         $this->type = $format;
 
         return $this;
     }
 
-    public function setLabels($labels)
+    public function setLabels(array $labels)
     {
         $this->labels = $labels;
 
@@ -27,10 +27,15 @@ class xAxis
         return $this->labels;
     }
 
-    public function addLabel($label)
+    public function addLabel(string $label)
     {
         $this->labels[] = $label;
 
         return $this;
+    }
+
+    public function getFormat()
+    {
+        return $this->type;
     }
 }

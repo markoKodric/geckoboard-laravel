@@ -80,4 +80,9 @@ class BulletGraph extends Widget
     {
         $this->orientation = $orientation;
     }
+
+    public function getOrientation()
+    {
+        return $this->orientation;
+    }
 }

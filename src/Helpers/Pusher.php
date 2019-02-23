@@ -18,11 +18,6 @@ class Pusher
         ]);
     }
 
-    public function setApiToken($apiToken)
-    {
-        $this->apiToken = $apiToken;
-    }
-
     public function push($widgetID, $widgetData)
     {
         $postData['api_key'] = $this->apiToken !== null ? $this->apiToken : env("GECKO_TOKEN");
@@ -32,10 +27,6 @@ class Pusher
             "json" => $postData
         ]);
 
-        return json_encode([
-            "headers"      => $response->getHeaders(),
-            "statusCode"   => $response->getStatusCode(),
-            "reasonPhrase" => $response->getReasonPhrase(),
-        ]);
+        return $response;
     }
 }
