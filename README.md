@@ -46,9 +46,6 @@ GECKO_DOMAIN=https://push.geckoboard.com/v1/send/
 # Widgets
 
 ## Basic usage
-
-**All SET/ADD methods of widgets are chainable.**
-
 ```php
 use Mare06xa\Geckoboard\Geckoboard;
 
@@ -70,6 +67,8 @@ class SomeClass
     }
 }
 ```
+
+---
 
 ## Bar Chart
 ```php
