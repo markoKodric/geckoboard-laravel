@@ -4,13 +4,13 @@ namespace Mare06xa\Geckoboard\src\Examples;
 
 
 use Carbon\Carbon;
-use Mare06xa\Geckoboard\src\Classes\Widgets\BulletGraph\Item\BulletGraphItem;
-use Mare06xa\Geckoboard\src\Enums\Format;
-use Mare06xa\Geckoboard\src\Enums\MonitoringStatus;
-use Mare06xa\Geckoboard\src\Enums\Orientation;
-use Mare06xa\Geckoboard\src\Enums\TextType;
-use Mare06xa\Geckoboard\src\Geckoboard;
-use Mare06xa\Geckoboard\src\Helpers\Data;
+use Mare06xa\Geckoboard\Classes\Widgets\BulletGraph\Item\BulletGraphItem;
+use Mare06xa\Geckoboard\Enums\Format;
+use Mare06xa\Geckoboard\Enums\MonitoringStatus;
+use Mare06xa\Geckoboard\Enums\Orientation;
+use Mare06xa\Geckoboard\Enums\TextType;
+use Mare06xa\Geckoboard\Geckoboard;
+use Mare06xa\Geckoboard\Helpers\Data;
 
 class Examples
 {

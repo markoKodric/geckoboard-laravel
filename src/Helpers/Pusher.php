@@ -22,9 +22,13 @@ class Pusher
         $postData['api_key'] = $this->apiToken !== null ? $this->apiToken : env("GECKO_TOKEN");
         $postData['data']    = $widgetData;
 
-        $response = $this->geckoClient->post($widgetID, [
-            "json" => $postData
-        ]);
+        try {
+            $response = $this->geckoClient->post($widgetID, [
+                "json" => $postData
+            ]);
+        } catch (\Exception $exception) {
+            $response = $exception;
+        }
 
         return $response;
     }

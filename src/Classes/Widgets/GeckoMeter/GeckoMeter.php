@@ -11,13 +11,13 @@ class GeckoMeter extends Widget
 {
     protected $item;
     protected $rules = [
-        'item'           => 'required|numeric',
-        'item.min'       => 'required|array',
-        'item.min.value' => 'required|numeric',
-        'item.max'       => 'required|array',
-        'item.max.value' => 'required|numeric',
-        'item.format'    => 'string|in:percent,currency',
-        'item.unit'      => 'string|size:3',
+        'item'      => 'required|numeric',
+        'min'       => 'required|array',
+        'min.value' => 'required|numeric',
+        'max'       => 'required|array',
+        'max.value' => 'required|numeric',
+        'format'    => 'string|in:percent,currency',
+        'unit'      => 'string|size:3',
 
     ];
 
@@ -39,7 +39,7 @@ class GeckoMeter extends Widget
 
     public function value($value)
     {
-        $this->item['value'] = $value;
+        $this->item['item'] = $value;
 
         return $this;
     }
