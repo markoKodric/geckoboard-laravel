@@ -26,11 +26,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mare06xa\\Geckoboard\\src\\GeckoboardServiceProvider"
-            ],
-            "aliases": {
-                "Geckoboard": "Mare0xa\\Geckoboard\\Facades\\Geckoboard"
-            }
+                "Mare06xa\\Geckoboard\\GeckoboardServiceProvider"
+            ]
         }
     }
 }
