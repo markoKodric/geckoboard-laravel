@@ -1,6 +1,6 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\BarChart\Axis;
+namespace Mare06xa\Geckoboard\Classes\Widgets\BarChart\Axis;
 
 
 class xAxis

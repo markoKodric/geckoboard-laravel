@@ -1,10 +1,9 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Helpers;
+namespace Mare06xa\Geckoboard\Helpers;
 
 
 use GuzzleHttp\Client;
-use Mare06xa\Geckoboard\src\Classes\Validations\WidgetValidator;
 
 class Pusher
 {

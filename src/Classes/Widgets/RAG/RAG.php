@@ -1,10 +1,10 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\RAG;
+namespace Mare06xa\Geckoboard\Classes\Widgets\RAG;
 
 
-use Mare06xa\Geckoboard\src\Abstracts\Widget;
-use Mare06xa\Geckoboard\src\Classes\Validations\WidgetValidator;
+use Mare06xa\Geckoboard\Abstracts\Widget;
+use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 
 class RAG extends Widget
 {

@@ -1,22 +1,22 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src;
+namespace Mare06xa\Geckoboard;
 
-use Mare06xa\Geckoboard\src\Abstracts\Widget;
-use Mare06xa\Geckoboard\src\Classes\Widgets\BarChart\BarChart;
-use Mare06xa\Geckoboard\src\Classes\Widgets\BulletGraph\BulletGraph;
-use Mare06xa\Geckoboard\src\Classes\Widgets\Funnel\Funnel;
-use Mare06xa\Geckoboard\src\Classes\Widgets\GeckoMeter\GeckoMeter;
-use Mare06xa\Geckoboard\src\Classes\Widgets\Highchart\Highchart;
-use Mare06xa\Geckoboard\src\Classes\Widgets\Leaderboard\Leaderboard;
-use Mare06xa\Geckoboard\src\Classes\Widgets\LineChart\LineChart;
-use Mare06xa\Geckoboard\src\Classes\Widgets\Map\Map;
-use Mare06xa\Geckoboard\src\Classes\Widgets\Monitoring\Monitoring;
-use Mare06xa\Geckoboard\src\Classes\Widgets\NumberSecondaryStat\NumberSecondaryStat;
-use Mare06xa\Geckoboard\src\Classes\Widgets\PaginatedList\PaginatedList;
-use Mare06xa\Geckoboard\src\Classes\Widgets\PieChart\PieChart;
-use Mare06xa\Geckoboard\src\Classes\Widgets\RAG\RAG;
-use Mare06xa\Geckoboard\src\Classes\Widgets\Text\Text;
+use Mare06xa\Geckoboard\Abstracts\Widget;
+use Mare06xa\Geckoboard\Classes\Widgets\BarChart\BarChart;
+use Mare06xa\Geckoboard\Classes\Widgets\BulletGraph\BulletGraph;
+use Mare06xa\Geckoboard\Classes\Widgets\Funnel\Funnel;
+use Mare06xa\Geckoboard\Classes\Widgets\GeckoMeter\GeckoMeter;
+use Mare06xa\Geckoboard\Classes\Widgets\Highchart\Highchart;
+use Mare06xa\Geckoboard\Classes\Widgets\Leaderboard\Leaderboard;
+use Mare06xa\Geckoboard\Classes\Widgets\LineChart\LineChart;
+use Mare06xa\Geckoboard\Classes\Widgets\Map\Map;
+use Mare06xa\Geckoboard\Classes\Widgets\Monitoring\Monitoring;
+use Mare06xa\Geckoboard\Classes\Widgets\NumberSecondaryStat\NumberSecondaryStat;
+use Mare06xa\Geckoboard\Classes\Widgets\PaginatedList\PaginatedList;
+use Mare06xa\Geckoboard\Classes\Widgets\PieChart\PieChart;
+use Mare06xa\Geckoboard\Classes\Widgets\RAG\RAG;
+use Mare06xa\Geckoboard\Classes\Widgets\Text\Text;
 
 class Geckoboard
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Validations;
+namespace Mare06xa\Geckoboard\Classes\Validations;
 
 
 use Illuminate\Support\Facades\Validator;

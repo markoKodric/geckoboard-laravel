@@ -1,6 +1,6 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\BulletGraph\Item;
+namespace Mare06xa\Geckoboard\Classes\Widgets\BulletGraph\Item;
 
 
 class Range

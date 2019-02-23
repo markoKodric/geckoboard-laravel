@@ -1,11 +1,11 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\GeckoMeter;
+namespace Mare06xa\Geckoboard\Classes\Widgets\GeckoMeter;
 
 
-use Mare06xa\Geckoboard\src\Abstracts\Widget;
-use Mare06xa\Geckoboard\src\Classes\Validations\FunnelValidator;
-use Mare06xa\Geckoboard\src\Classes\Validations\WidgetValidator;
+use Mare06xa\Geckoboard\Abstracts\Widget;
+use Mare06xa\Geckoboard\Classes\Validations\FunnelValidator;
+use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 
 class GeckoMeter extends Widget
 {

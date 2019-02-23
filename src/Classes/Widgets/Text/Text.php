@@ -1,11 +1,11 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\Text;
+namespace Mare06xa\Geckoboard\Classes\Widgets\Text;
 
 
-use Mare06xa\Geckoboard\src\Abstracts\Widget;
-use Mare06xa\Geckoboard\src\Classes\Validations\TextValidator;
-use Mare06xa\Geckoboard\src\Classes\Validations\WidgetValidator;
+use Mare06xa\Geckoboard\Abstracts\Widget;
+use Mare06xa\Geckoboard\Classes\Validations\TextValidator;
+use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 
 class Text extends Widget
 {

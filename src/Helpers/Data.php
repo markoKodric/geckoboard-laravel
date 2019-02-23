@@ -1,6 +1,6 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Helpers;
+namespace Mare06xa\Geckoboard\Helpers;
 
 
 use Carbon\Carbon;

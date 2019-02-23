@@ -1,10 +1,10 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Abstracts;
+namespace Mare06xa\Geckoboard\Abstracts;
 
 
-use Mare06xa\Geckoboard\src\Classes\Validations\WidgetValidator;
-use Mare06xa\Geckoboard\src\Helpers\Pusher;
+use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
+use Mare06xa\Geckoboard\Helpers\Pusher;
 
 abstract class Widget
 {

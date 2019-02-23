@@ -1,6 +1,6 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\PaginatedList;
+namespace Mare06xa\Geckoboard\Classes\Widgets\PaginatedList;
 
 
 class Items

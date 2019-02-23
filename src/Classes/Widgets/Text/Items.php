@@ -1,9 +1,9 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\Text;
+namespace Mare06xa\Geckoboard\Classes\Widgets\Text;
 
 
-use Mare06xa\Geckoboard\src\Enums\TextType;
+use Mare06xa\Geckoboard\Enums\TextType;
 
 class Items
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\RAG;
+namespace Mare06xa\Geckoboard\Classes\Widgets\RAG;
 
 
 class Items

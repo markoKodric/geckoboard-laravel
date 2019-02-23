@@ -1,9 +1,7 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\Map;
+namespace Mare06xa\Geckoboard\Classes\Widgets\Map;
 
-
-use Mare06xa\Geckoboard\src\Classes\Widgets\Map\Item\Point;
 
 class Points
 {

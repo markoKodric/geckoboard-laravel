@@ -3,7 +3,6 @@ namespace Mare06xa\Geckoboard;
 
 
 use Illuminate\Support\ServiceProvider;
-use Mare06xa\Geckoboard\src\Geckoboard;
 
 class GeckoboardServiceProvider extends ServiceProvider
 {
@@ -25,12 +24,10 @@ class GeckoboardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/geckoboard.php', 'geckoboard');
+        //$this->mergeConfigFrom(__DIR__.'/../config/geckoboard.php', 'geckoboard');
 
         // Register the service the package provides.
-        $this->app->singleton('geckoboard', function ($app) {
-            return new Geckoboard();
-        });
+        $this->app->alias(Geckoboard::class, 'geckoboard');
     }
 
     /**

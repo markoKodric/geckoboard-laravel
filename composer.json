@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Mare06xa\\Geckoboard\\": "src/"
+            "Mare06xa\\Geckoboard\\": "src"
         }
     },
     "autoload-dev": {
@@ -27,7 +27,10 @@
         "laravel": {
             "providers": [
                 "Mare06xa\\Geckoboard\\GeckoboardServiceProvider"
-            ]
+            ],
+            "aliases":{
+                "Geckoboard": "Mare06xa\\Geckoboard\\GeckoboardFacade"
+            }
         }
     }
 }

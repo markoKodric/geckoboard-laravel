@@ -1,9 +1,9 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\BarChart\Axis;
+namespace Mare06xa\Geckoboard\Classes\Widgets\BarChart\Axis;
 
 
-use Mare06xa\Geckoboard\src\Enums\Format;
+use Mare06xa\Geckoboard\Enums\Format;
 
 class yAxis
 {

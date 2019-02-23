@@ -1,6 +1,6 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\NumberSecondaryStat;
+namespace Mare06xa\Geckoboard\Classes\Widgets\NumberSecondaryStat;
 
 
 class Items

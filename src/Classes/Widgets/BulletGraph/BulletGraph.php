@@ -1,12 +1,12 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\BulletGraph;
+namespace Mare06xa\Geckoboard\Classes\Widgets\BulletGraph;
 
 
-use Mare06xa\Geckoboard\src\Abstracts\Widget;
-use Mare06xa\Geckoboard\src\Classes\Validations\BulletGraphValidator;
-use Mare06xa\Geckoboard\src\Classes\Validations\WidgetValidator;
-use Mare06xa\Geckoboard\src\Enums\Orientation;
+use Mare06xa\Geckoboard\Abstracts\Widget;
+use Mare06xa\Geckoboard\Classes\Validations\BulletGraphValidator;
+use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
+use Mare06xa\Geckoboard\Enums\Orientation;
 
 class BulletGraph extends Widget
 {

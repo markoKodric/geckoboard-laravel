@@ -1,6 +1,6 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Enums;
+namespace Mare06xa\Geckoboard\Enums;
 
 
 class Orientation

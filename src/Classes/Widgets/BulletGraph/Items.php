@@ -1,9 +1,9 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\BulletGraph;
+namespace Mare06xa\Geckoboard\Classes\Widgets\BulletGraph;
 
 
-use Mare06xa\Geckoboard\src\Classes\Widgets\BulletGraph\Item\BulletGraphItem;
+use Mare06xa\Geckoboard\Classes\Widgets\BulletGraph\Item\BulletGraphItem;
 
 class Items
 {

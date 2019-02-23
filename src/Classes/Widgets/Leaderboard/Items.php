@@ -1,10 +1,10 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\Leaderboard;
+namespace Mare06xa\Geckoboard\Classes\Widgets\Leaderboard;
 
 
-use Mare06xa\Geckoboard\src\Enums\Format;
-use Mare06xa\Geckoboard\src\Enums\SortOrder;
+use Mare06xa\Geckoboard\Enums\Format;
+use Mare06xa\Geckoboard\Enums\SortOrder;
 
 class Items
 {

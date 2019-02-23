@@ -1,12 +1,12 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\LineChart;
+namespace Mare06xa\Geckoboard\Classes\Widgets\LineChart;
 
 
-use Mare06xa\Geckoboard\src\Abstracts\Widget;
-use Mare06xa\Geckoboard\src\Classes\Validations\WidgetValidator;
-use Mare06xa\Geckoboard\src\Classes\Widgets\LineChart\Axis\xAxis;
-use Mare06xa\Geckoboard\src\Classes\Widgets\LineChart\Axis\yAxis;
+use Mare06xa\Geckoboard\Abstracts\Widget;
+use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
+use Mare06xa\Geckoboard\Classes\Widgets\LineChart\Axis\xAxis;
+use Mare06xa\Geckoboard\Classes\Widgets\LineChart\Axis\yAxis;
 
 class LineChart extends Widget
 {

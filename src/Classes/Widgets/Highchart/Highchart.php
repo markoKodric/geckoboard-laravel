@@ -1,9 +1,9 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\Highchart;
+namespace Mare06xa\Geckoboard\Classes\Widgets\Highchart;
 
 
-use Mare06xa\Geckoboard\src\Abstracts\Widget;
+use Mare06xa\Geckoboard\Abstracts\Widget;
 
 class Highchart extends Widget
 {

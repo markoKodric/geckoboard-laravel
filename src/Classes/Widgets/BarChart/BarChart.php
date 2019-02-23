@@ -1,12 +1,12 @@
 <?php
 
-namespace Mare06xa\Geckoboard\src\Classes\Widgets\BarChart;
+namespace Mare06xa\Geckoboard\Classes\Widgets\BarChart;
 
 
-use Mare06xa\Geckoboard\src\Classes\Validations\WidgetValidator;
-use Mare06xa\Geckoboard\src\Classes\Widgets\BarChart\Axis\xAxis;
-use Mare06xa\Geckoboard\src\Classes\Widgets\BarChart\Axis\yAxis;
-use Mare06xa\Geckoboard\src\Abstracts\Widget;
+use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
+use Mare06xa\Geckoboard\Classes\Widgets\BarChart\Axis\xAxis;
+use Mare06xa\Geckoboard\Classes\Widgets\BarChart\Axis\yAxis;
+use Mare06xa\Geckoboard\Abstracts\Widget;
 
 class BarChart extends Widget
 {
