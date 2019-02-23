@@ -289,7 +289,7 @@ $numberStat->items()
            ->add(700000, "", "€");
 
 $apiResponse = $numberStat->push();
-``
+```
 ---
 
 ## Pie Chart
