@@ -1,4 +1,6 @@
-**Currently only supports widgets PUSH API**
+**Currently only supports widgets PUSH API.**
+
+**Highcharts support is coming soon.**
 
 # Installation
 Require this package with [composer](http://getcomposer.org).
