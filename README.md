@@ -59,6 +59,9 @@ class SomeClass
         // Widget ID is obtained on Geckoboard by clicking "Edit" in the widget options...
         $widget = Geckoboard::widgetClass($widgetID);
         
+        // Optionally you can set different API Token if you are working with multiple dashboards...
+        $widget->setApiToken($apiToken);
+        
         $widget->firstMethod()
                ->secondMethod();
         
