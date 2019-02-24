@@ -1,4 +1,4 @@
-**Currently only supports widgets PUSH API.**
+**Currently supports Widgets PUSH API and Datasets API.**
 
 **Highcharts support is coming soon.**
 
@@ -36,16 +36,95 @@ You will need API token from Geckoboard.
 - Go to **https://www.geckoboard.com/**, sign up and confirm your account
 - Go to your profile settings and copy your API token
 
-Add this lines to your `.env` configuration file
+Add this line to your `.env` configuration file
 
 ```
 GECKO_TOKEN={Insert your token here}
-GECKO_DOMAIN=https://push.geckoboard.com/v1/send/
 ```
 
 ---
 
-# Widgets
+# Datasets API
+
+## Basic usage
+```php
+use Mare06xa\Geckoboard\Geckoboard;
+
+class SomeClass
+{
+    public function foo()
+    {
+        $dataset = Geckoboard::datasetAPI()->createDataset('name.test');
+
+        $dataset->schema()
+                ->number()
+                ->setKey('amount')
+                ->setName('Amount')
+                ->addData([819, 409, 164, 180]);
+
+        $dataset->schema()
+                ->datetime()
+                ->setKey('timestamp')
+                ->setName('Date')
+                ->addData(["2018-01-01T12:00:00Z", "2018-01-02T12:00:00Z", "2018-01-03T12:00:00Z"])
+                ->isUnique();
+
+        $apiResponse1 = $dataset->applySchema();
+        $apiResponse2 = $dataset->appendData();
+    }
+}
+```
+
+## Basic usage with SQL
+```php
+use Mare06xa\Geckoboard\Geckoboard;
+
+class SomeClass
+{
+    public function foo()
+    {
+        $sqlDataset = Geckoboard::datasetAPI()
+                                ->withDB()
+                                ->createDataset('mare06xa.testid2');
+
+        $sqlDataset->schema()
+                   ->addNumber()
+                   ->setKey('amount')
+                   ->setName('Amount');
+
+        $sqlDataset->schema()
+                   ->addNumber()
+                   ->setKey('amount2')
+                   ->setName('Amount 2');
+
+        $sqlDataset->schema()
+                   ->addString()
+                   ->setKey('desc')
+                   ->setName('Description');
+
+        // Set DB connection driver (optional)
+        $sqlDataset->setDB('mysql');
+
+        // Use dataset method for query building
+        $dbData = $sqlDataset
+            ->dbQuery()
+            ->table('test_table')
+            ->get(['col1', 'col2', 'col3']);
+
+        // Or acquire data directly with Laravel query builder
+        $dbData = DB::table('test_table')->get(['col1', 'col2', 'col3']);
+
+        $sqlDataset->setData($dbData);
+
+        $apiResponse1 = $sqlDataset->applySchema();
+        $apiResponse2 = $sqlDataset->replaceData();
+    }
+}
+```
+
+---
+
+# Widgets API
 
 ## Basic usage
 ```php
@@ -56,7 +135,7 @@ class SomeClass
     public function foo()
     {
         // Widget ID is obtained on Geckoboard by clicking "Edit" in the widget options...
-        $widget = Geckoboard::widgetClass($widgetID);
+        $widget = Geckoboard::widgetAPI()->widgetClass($widgetID);
         
         // Optionally you can set different API Token if you are working with multiple accounts...
         $widget->setApiToken($apiToken);
@@ -73,7 +152,7 @@ class SomeClass
 
 ## Bar Chart
 ```php
-$barChart = Geckoboard::barChart($widgetID);
+$barChart = Geckoboard::widgetAPI()->barChart($widgetID);
 
 // ... set data
 
@@ -116,7 +195,7 @@ $barChart->yAxis()
 
 ## Bullet Graph
 ```php
-$bulletGraph = Geckoboard::bulletGraph($widgetID);
+$bulletGraph = Geckoboard::widgetAPI()->bulletGraph($widgetID);
 
 $bulletGraph->setOrientation(Orientation::HORIZONTAL);
 
@@ -146,7 +225,7 @@ $apiResponse = $bulletGraph->push();
 
 ## Funnel
 ```php
-$funnel = Geckoboard::funnel($widgetID);
+$funnel = Geckoboard::widgetAPI()->funnel($widgetID);
 
 $funnel->items()
        ->add(87809, "Step 1")
@@ -165,7 +244,7 @@ $apiResponse = $funnel->push();
 
 ## Geck-o-Meter
 ```php
-$geckoMeter = Geckoboard::geckoMeter($widgetID);
+$geckoMeter = Geckoboard::widgetAPI()->geckoMeter($widgetID);
 
 $geckoMeter->value(23)
            ->min(0)
@@ -177,7 +256,7 @@ $apiResponse = $geckoMeter->push();
 
 ## Leaderboard
 ```php
-$leaderBoard = Geckoboard::leaderBoard($widgetID);
+$leaderBoard = Geckoboard::widgetAPI()->leaderBoard($widgetID);
 $leaderBoard->items()
             ->setFormat(Format::PERCENT);
 
@@ -204,7 +283,7 @@ $apiResponse = $leaderBoard->push();
 
 ## Line Chart
 ```php
-$lineChart = Geckoboard::lineChart($widgetID);
+$lineChart = Geckoboard::widgetAPI()->lineChart($widgetID);
 
 $lineChart->xAxis()
           ->setFormat(Format::DATETIME_ISO_8601);
@@ -221,7 +300,7 @@ $apiResponse = $lineChart->push();
 
 ## List
 ```php
-$list = Geckoboard::list($widgetID);
+$list = Geckoboard::widgetAPI()->list($widgetID);
 
 $list->items()
      ->add("Chrome",  "40327 visits", "New!")
@@ -237,7 +316,7 @@ $apiResponse = $list->push();
 
 ## Map
 ```php
-$map = Geckoboard::map($widgetID);
+$map = Geckoboard::widgetAPI()->map($widgetID);
 
 $map->points()
     ->prepareCity("London", "GB")
@@ -274,7 +353,7 @@ $apiResponse = $map->push();
 
 ## Monitoring
 ```php
-$monitoring = Geckoboard::monitoring($widgetID);
+$monitoring = Geckoboard::widgetAPI()->monitoring($widgetID);
 
 $monitoring->status(MonitoringStatus::UP)
            ->downTime("9 days ago")
@@ -286,7 +365,7 @@ $apiResponse = $monitoring->push();
 
 ## Number and Secondary Stat
 ```php
-$numberStat = Geckoboard::numberSecondaryStat($widgetID);
+$numberStat = Geckoboard::widgetAPI()->numberSecondaryStat($widgetID);
 
 $numberStat->items()
            ->add(700000, "", "€");
@@ -297,7 +376,7 @@ $apiResponse = $numberStat->push();
 
 ## Pie Chart
 ```php
-$pieChart = Geckoboard::pieChart($widgetID);
+$pieChart = Geckoboard::widgetAPI()->pieChart($widgetID);
 
 $pieChart->items()
          ->add(100, "May", "#13699C")
@@ -311,7 +390,7 @@ $apiResponse = $pieChart->push();
 
 ## RAG
 ```php
-$RAG = Geckoboard::RAG($widgetID);
+$RAG = Geckoboard::widgetAPI()->RAG($widgetID);
 
 $RAG->items()
     ->first(16,  "Long past due")
@@ -326,7 +405,7 @@ $apiResponse = $RAG->push();
 
 ## Text
 ```php
-$text = Geckoboard::text($widgetID);
+$text = Geckoboard::widgetAPI()->text($widgetID);
 
 $text->items()
      ->add("Unfortunately, as you probably already know, people")
