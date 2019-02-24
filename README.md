@@ -42,6 +42,14 @@ Add this line to your `.env` configuration file
 GECKO_TOKEN={Insert your token here}
 ```
 
+Set path to Datasets configuration YAML file in `config/geckoboard.php`
+
+```
+...
+...
+'datasets_config' => base_path('resources/configs/datasets.yaml'),
+```
+
 ---
 
 # Datasets API
@@ -124,7 +132,7 @@ class SomeClass
 
 ## Loading dataset from YAML file (applies schema to dataset)
 ```php
-$configPath = base_path("resources/configs/datasets.yaml");
+$configPath = config('geckoboard.datasets_config');
 $datasetID  = "testing.id";
 
 $sqlDataset = Geckoboard::datasetAPI()
