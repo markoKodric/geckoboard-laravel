@@ -134,6 +134,37 @@ class SomeClass
 ```
 
 ## Loading dataset from YAML file (applies schema to dataset)
+
+**Example YAML file**
+```yaml
+dataset.testid2:
+    type: sql
+    schema:
+        amount:
+            type: number
+            name: Amount
+        amount2:
+            type: number
+            name: Amount2
+            optional: true
+        desc:
+            type: string
+            name: Description
+            unique: true
+dataset.testid:
+    type: standard
+    schema:
+        amount:
+            type: number
+            name: Amount
+        timestamp:
+            type: datetime
+            name: Date
+            unique: true
+
+```
+
+**Code**
 ```php
 $configPath = config('geckoboard.datasets_config');
 $datasetID  = "testing.id";
