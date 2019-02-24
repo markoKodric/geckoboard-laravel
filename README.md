@@ -44,7 +44,7 @@ GECKO_TOKEN={Insert your token here}
 
 Set path to Datasets configuration YAML file
 
-```
+```php
 // config/geckoboard.php
 return [
     ...
