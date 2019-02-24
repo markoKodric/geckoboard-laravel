@@ -68,13 +68,13 @@ class SomeClass
         $dataset = Geckoboard::datasetAPI()->createDataset('testing.id');
 
         $dataset->schema()
-                ->number()
+                ->addNumber()
                 ->setKey('amount')
                 ->setName('Amount')
                 ->addData([819, 409, 164, 180]);
 
         $dataset->schema()
-                ->datetime()
+                ->addDatetime()
                 ->setKey('timestamp')
                 ->setName('Date')
                 ->addData(["2018-01-01T12:00:00Z", "2018-01-02T12:00:00Z", "2018-01-03T12:00:00Z"])
