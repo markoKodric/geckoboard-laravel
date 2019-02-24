@@ -54,7 +54,7 @@ class SomeClass
 {
     public function foo()
     {
-        $dataset = Geckoboard::datasetAPI()->createDataset('name.test');
+        $dataset = Geckoboard::datasetAPI()->createDataset('testing.id');
 
         $dataset->schema()
                 ->number()
@@ -85,7 +85,7 @@ class SomeClass
     {
         $sqlDataset = Geckoboard::datasetAPI()
                                 ->withDB()
-                                ->createDataset('mare06xa.testid2');
+                                ->createDataset('testing.id');
 
         $sqlDataset->schema()
                    ->addNumber()
@@ -122,6 +122,23 @@ class SomeClass
 }
 ```
 
+## Loading dataset from YAML file (applies schema to dataset)
+```php
+$configPath = base_path("resources/configs/datasets.yaml");
+$datasetID  = "testing.id";
+
+$sqlDataset = Geckoboard::datasetAPI()
+                        ->loadDatasetFromFile($configPath, $datasetID);
+
+$dbData = $sqlDataset
+            ->dbQuery()
+            ->table('test_table')
+            ->get(['col1', 'col2', 'col3']);
+
+$sqlDataset->setData($dbData);
+$apiResponse = $sqlDataset->replaceData();
+```
+
 ---
 
 # Widgets API
@@ -147,8 +164,6 @@ class SomeClass
     }
 }
 ```
-
----
 
 ## Bar Chart
 ```php
@@ -191,8 +206,6 @@ $barChart->yAxis()
          ->setFormat(Format::PERCENT);
 ```
 
----
-
 ## Bullet Graph
 ```php
 $bulletGraph = Geckoboard::widgetAPI()->bulletGraph($widgetID);
@@ -221,8 +234,6 @@ $bulletGraph->items()
 $apiResponse = $bulletGraph->push();
 ```
 
----
-
 ## Funnel
 ```php
 $funnel = Geckoboard::widgetAPI()->funnel($widgetID);
@@ -240,8 +251,6 @@ $funnel->items()
 $apiResponse = $funnel->push();
 ```
 
----
-
 ## Geck-o-Meter
 ```php
 $geckoMeter = Geckoboard::widgetAPI()->geckoMeter($widgetID);
@@ -252,7 +261,6 @@ $geckoMeter->value(23)
 
 $apiResponse = $geckoMeter->push();
 ```
----
 
 ## Leaderboard
 ```php
@@ -279,7 +287,6 @@ $leaderBoard->items()  // Sort by value in descending order...
 
 $apiResponse = $leaderBoard->push();
 ```
----
 
 ## Line Chart
 ```php
@@ -296,7 +303,6 @@ $lineChart->yAxis()
 
 $apiResponse = $lineChart->push();
 ```
----
 
 ## List
 ```php
@@ -311,8 +317,6 @@ $list->items()
 
 $apiResponse = $list->push();
 ```
-
----
 
 ## Map
 ```php
@@ -349,7 +353,6 @@ $map->points()
 
 $apiResponse = $map->push();
 ```
----
 
 ## Monitoring
 ```php
@@ -361,7 +364,6 @@ $monitoring->status(MonitoringStatus::UP)
 
 $apiResponse = $monitoring->push();
 ```
----
 
 ## Number and Secondary Stat
 ```php
@@ -372,7 +374,6 @@ $numberStat->items()
 
 $apiResponse = $numberStat->push();
 ```
----
 
 ## Pie Chart
 ```php
@@ -386,7 +387,6 @@ $pieChart->items()
 
 $apiResponse = $pieChart->push();
 ```
----
 
 ## RAG
 ```php
@@ -401,7 +401,6 @@ $RAG->items()
 
 $apiResponse = $RAG->push();
 ```
----
 
 ## Text
 ```php
