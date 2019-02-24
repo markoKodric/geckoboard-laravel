@@ -21,7 +21,10 @@
     "autoload-dev": {
         "psr-4": {
             "Mare06xa\\Geckoboard\\Tests\\": "tests"
-        }
+        },
+        "files": [
+            "src/helpers/functions.php"
+        ]
     },
     "extra": {
         "laravel": {

@@ -5,16 +5,37 @@ namespace Mare06xa\Geckoboard\Helpers;
 
 use GuzzleHttp\Client;
 
-class Pusher
+class WidgetClient
 {
     protected $geckoClient;
     protected $apiToken;
 
     public function __construct()
     {
+        $baseURI = config('geckoboard.widget_api_domain');
+
+        if (!$baseURI) {
+            $baseURI = 'https://push.geckoboard.com/v1/send/';
+        }
+
         $this->geckoClient = new Client([
-            'base_uri' => env('GECKO_DOMAIN')
+            'base_uri' => $baseURI
         ]);
+    }
+
+    /**
+     * @param $apiToken
+     * @throws \Exception
+     */
+    function setApiToken($apiToken)
+    {
+        $apiTokenEmpty = empty(trim($apiToken));
+
+        if ($apiTokenEmpty) {
+            throw new \Exception('API token must not be empty.');
+        }
+
+        $this->apiToken = trim($apiToken);
     }
 
     public function push($widgetID, $widgetData)

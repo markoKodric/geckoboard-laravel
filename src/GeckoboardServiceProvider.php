@@ -14,7 +14,9 @@ class GeckoboardServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        $this->publishes([
+            __DIR__.'/../config/geckoboard.php' => config_path('geckoboard.php'),
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class GeckoboardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //$this->mergeConfigFrom(__DIR__.'/../config/geckoboard.php', 'geckoboard');
+        $this->mergeConfigFrom(__DIR__.'/../config/geckoboard.php', 'geckoboard');
 
         // Register the service the package provides.
         $this->app->alias(Geckoboard::class, 'geckoboard');

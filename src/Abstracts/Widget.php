@@ -4,7 +4,7 @@ namespace Mare06xa\Geckoboard\Abstracts;
 
 
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
-use Mare06xa\Geckoboard\Helpers\Pusher;
+use Mare06xa\Geckoboard\Helpers\WidgetClient;
 
 abstract class Widget
 {
@@ -60,9 +60,18 @@ abstract class Widget
         $validator->validate();
     }
 
+    /**
+     * @return \Exception|\Psr\Http\Message\ResponseInterface
+     * @throws \Exception
+     */
     function push()
     {
-        $pusher   = new Pusher();
+        $pusher   = new WidgetClient();
+
+        if ($this->apiToken !== null) {
+            $pusher->setApiToken($this->apiToken);
+        }
+
         $pushData = $this->prepareData();
 
         return $pusher->push($this->widgetID, $pushData);
