@@ -1,4 +1,6 @@
-**Currently only supports widgets PUSH API**
+**Currently only supports widgets PUSH API.**
+
+**Highcharts support is coming soon.**
 
 # Installation
 Require this package with [composer](http://getcomposer.org).
@@ -46,9 +48,6 @@ GECKO_DOMAIN=https://push.geckoboard.com/v1/send/
 # Widgets
 
 ## Basic usage
-
-**All SET/ADD methods of widgets are chainable.**
-
 ```php
 use Mare06xa\Geckoboard\Geckoboard;
 
@@ -59,14 +58,18 @@ class SomeClass
         // Widget ID is obtained on Geckoboard by clicking "Edit" in the widget options...
         $widget = Geckoboard::widgetClass($widgetID);
         
+        // Optionally you can set different API Token if you are working with multiple accounts...
+        $widget->setApiToken($apiToken);
+        
         $widget->firstMethod()
                ->secondMethod();
         
-        // Returns GuzzleHttp\Psr7\Response object or throws ClientException...
         $apiResponse = $widget->push();
     }
 }
 ```
+
+---
 
 ## Bar Chart
 ```php
