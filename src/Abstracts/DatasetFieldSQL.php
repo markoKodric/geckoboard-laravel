@@ -10,9 +10,9 @@ abstract class DatasetFieldSQL
     protected $type;
     protected $data;
     protected $rules;
-    protected $isOptional = false;
     protected $dataCount = 0;
 
+    public $isOptional = false;
     public $isUnique = false;
 
     const DATE       = 'date';
@@ -56,6 +56,13 @@ abstract class DatasetFieldSQL
     public function isUnique()
     {
         $this->isUnique = true;
+
+        return $this;
+    }
+
+    public function isOptional()
+    {
+        $this->isOptional = true;
 
         return $this;
     }

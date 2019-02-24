@@ -5,6 +5,7 @@ namespace Mare06xa\Geckoboard\Classes\Datasets;
 
 use Mare06xa\Geckoboard\Classes\Validations\DatasetFieldValidator;
 use Mare06xa\Geckoboard\Helpers\DatasetClient;
+use Symfony\Component\Yaml\Yaml;
 
 class Dataset
 {
@@ -12,10 +13,12 @@ class Dataset
     protected $datasetID;
     protected $apiToken;
     protected $uniqueColumns;
+    protected $isSQL;
 
     public function __construct()
     {
         $this->schema = new Schema();
+        $this->isSQL  = false;
     }
 
     protected function prepareData(): array
@@ -55,7 +58,54 @@ class Dataset
             }
         }
 
+        $currentConfig = Yaml::parse(file_get_contents(config('geckoboard.datasets_config')));
+        $fieldSQL      = $this->isSQL ? "sql" : "standard";
+        $newConfig     = [];
+
+        $newConfig[$this->datasetID] = [
+            'type'   => $fieldSQL,
+            'schema' => []
+        ];
+
+        foreach ($this->schema()->get() as $field) {
+            $newConfig[$this->datasetID]['schema'][$field->getKey()] = [
+                'type' => $field->getType(),
+                'name' => $field->getName()
+            ];
+
+            if ($field->isUnique) {
+                $newConfig[$this->datasetID]['schema'][$field->getKey()]['unique'] = true;
+            }
+
+            if ($field->isOptional) {
+                $newConfig[$this->datasetID]['schema'][$field->getKey()]['optional'] = true;
+            }
+        }
+
+        $newConfig = array_merge($currentConfig, $newConfig);
+
+        $yaml = Yaml::dump($newConfig, 512);
+
+        file_put_contents(config('geckoboard.datasets_config'), $yaml);
+
         return $schemaData;
+    }
+
+    protected function getFieldObject($dataset, $type)
+    {
+        $fieldsNamespace = $dataset instanceof Dataset ?
+            "Mare06xa\Geckoboard\Classes\Datasets\Fields\\"   :
+            "Mare06xa\Geckoboard\Classes\DatasetsSQL\Fields\\";
+
+        switch ($type) {
+            case 'date':       $class = $fieldsNamespace . "Date"; return new $class; break;
+            case 'datetime':   $class = $fieldsNamespace . "Datetime"; return new $class; break;
+            case 'money':      $class = $fieldsNamespace . "Money"; return new $class; break;
+            case 'number':     $class = $fieldsNamespace . "Number"; return new $class; break;
+            case 'percentage': $class = $fieldsNamespace . "Percentage"; return new $class; break;
+            case 'string':     $class = $fieldsNamespace . "StringType"; return new $class; break;
+            default:           $class = $fieldsNamespace . "Date"; return new $class; break;
+        }
     }
 
     public function schema()

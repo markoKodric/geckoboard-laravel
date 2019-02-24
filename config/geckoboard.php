@@ -10,4 +10,9 @@ return [
      * The domain of DatasetSQL API
      */
     'dataset_api_domain' => 'https://api.geckoboard.com/datasets/',
+
+    /*
+     * Datasets config file
+     */
+    'datasets_config' => base_path('resources/configs/datasets.yaml'),
 ];

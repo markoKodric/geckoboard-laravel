@@ -16,6 +16,7 @@ class DatasetSQL extends Dataset
         parent::__construct();
 
         $this->queryBuilder = DB::connection($this->dbDriver);
+        $this->isSQL        = true;
     }
 
     protected function prepareData(): array
