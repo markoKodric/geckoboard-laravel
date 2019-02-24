@@ -86,7 +86,7 @@ class SomeClass
 }
 ```
 
-## Basic usage with SQL
+## Basic usage with Database
 ```php
 use Mare06xa\Geckoboard\Geckoboard;
 
