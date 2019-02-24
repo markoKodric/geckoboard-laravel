@@ -4,7 +4,8 @@
     "keywords": ["Laravel", "Geckoboard"],
     "require": {
         "guzzlehttp/guzzle": "^6.3",
-        "illuminate/support": "~5"
+        "illuminate/support": "~5",
+        "symfony/yaml": "^4.2"
     },
     "license": "MIT",
     "authors": [

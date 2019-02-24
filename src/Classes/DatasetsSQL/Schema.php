@@ -14,11 +14,11 @@ class Schema
 {
     protected $fields;
 
-    protected function add($field)
+    public function add($fieldObject)
     {
-        $this->fields[] = $field;
+        $this->fields[] = $fieldObject;
 
-        return $field;
+        return $fieldObject;
     }
 
     public function addDate()
