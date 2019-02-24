@@ -42,12 +42,15 @@ Add this line to your `.env` configuration file
 GECKO_TOKEN={Insert your token here}
 ```
 
-Set path to Datasets configuration YAML file in `config/geckoboard.php`
+Set path to Datasets configuration YAML file
 
 ```
-...
-...
-'datasets_config' => base_path('resources/configs/datasets.yaml'),
+// config/geckoboard.php
+return [
+    ...
+    'datasets_config' => base_path('resources/configs/datasets.yaml')
+    ...
+];
 ```
 
 ---
