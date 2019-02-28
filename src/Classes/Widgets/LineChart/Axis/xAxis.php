@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\LineChart\Axis;
 
-
 use Mare06xa\Geckoboard\Enums\Format;
 
 class xAxis

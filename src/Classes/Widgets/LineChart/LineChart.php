@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\LineChart;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 use Mare06xa\Geckoboard\Classes\Widgets\LineChart\Axis\xAxis;
@@ -12,20 +11,20 @@ class LineChart extends Widget
 {
     protected $xAxis;
     protected $yAxis;
-    protected $rules = [
-        'x_axis'          => 'required|array',
-        'x_axis.type'     => 'string|in:standard,datetime',
-        'x_axis.labels'   => 'required|array',
-        'x_axis.labels.*' => 'string',
-        'y_axis'          => 'required|array',
-        'y_axis.format'   => 'required|string|in:decimal,percent,currency',
-        'y_axis.unit'     => 'string|size:3',
-        'series'          => 'required|array',
-        'series.*.data'   => 'required|array',
-        'series.*.name'   => 'string',
-        'series.*.incomplete_from' => 'string'
-    ];
 
+    protected $rules = [
+        'x_axis'                   => 'required|array',
+        'x_axis.type'              => 'string|in:standard,datetime',
+        'x_axis.labels'            => 'required|array',
+        'x_axis.labels.*'          => 'string',
+        'y_axis'                   => 'required|array',
+        'y_axis.format'            => 'required|string|in:decimal,percent,currency',
+        'y_axis.unit'              => 'string|size:3',
+        'series'                   => 'required|array',
+        'series.*.data'            => 'required|array',
+        'series.*.name'            => 'string',
+        'series.*.incomplete_from' => 'string',
+    ];
 
     public function __construct()
     {
@@ -41,16 +40,17 @@ class LineChart extends Widget
     {
         $widgetData = [
             'x_axis' => [
-                'labels' => $this->xAxis->getLabels()
+                'labels' => $this->xAxis->getLabels(),
             ],
             'y_axis' => [
-                'format' => $this->yAxis->getFormat()
+                'format' => $this->yAxis->getFormat(),
             ],
-            'series' => $this->yAxis->getLines()
+            'series' => $this->yAxis->getLines(),
         ];
 
         if ($this->xAxis->isDatetime()) {
             $widgetData['x_axis']['type'] = $this->xAxis->getFormat();
+
             unset($widgetData['x_axis']['labels']);
         }
 

@@ -2,19 +2,18 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Monitoring;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 
 class Monitoring extends Widget
 {
     protected $item;
+
     protected $rules = [
         'status'       => 'required|in:Up,Down,Unreported',
         'downTime'     => 'string',
-        'responseTime' => 'string'
+        'responseTime' => 'string',
     ];
-
 
     public function __construct()
     {

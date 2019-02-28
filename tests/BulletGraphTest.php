@@ -2,10 +2,9 @@
 
 namespace Mare06xa\Geckoboard\Tests;
 
-
-use Mare06xa\Geckoboard\src\Classes\Widgets\BulletGraph\Items;
-use Mare06xa\Geckoboard\src\Geckoboard;
 use TestCase;
+use Mare06xa\Geckoboard\src\Geckoboard;
+use Mare06xa\Geckoboard\src\Classes\Widgets\BulletGraph\Items;
 
 class BulletGraphTest extends TestCase
 {
@@ -19,6 +18,7 @@ class BulletGraphTest extends TestCase
     public function testOrientation()
     {
         $bulletGraph = Geckoboard::bulletGraph('123');
+
         $bulletGraph->setOrientation("TestOrientation");
 
         $this->assertTrue($bulletGraph->getOrientation() == "TestOrientation");

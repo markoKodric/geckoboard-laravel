@@ -2,10 +2,9 @@
 
 namespace Mare06xa\Geckoboard\Classes\Datasets;
 
-
-use Mare06xa\Geckoboard\Classes\Validations\DatasetFieldValidator;
-use Mare06xa\Geckoboard\Helpers\DatasetClient;
 use Symfony\Component\Yaml\Yaml;
+use Mare06xa\Geckoboard\Helpers\DatasetClient;
+use Mare06xa\Geckoboard\Classes\Validations\DatasetFieldValidator;
 
 class Dataset
 {
@@ -18,17 +17,19 @@ class Dataset
     public function __construct()
     {
         $this->schema = new Schema();
-        $this->isSQL  = false;
+
+        $this->isSQL = false;
     }
 
     protected function prepareData(): array
     {
         $fieldsData = [
-            'data' => []
+            'data' => [],
         ];
 
         for ($i = 0; $i < $this->schema()->dataCount(); $i++) {
             $singleData = [];
+
             foreach ($this->schema()->get() as $field) {
                 if ($field->dataSize() > $i) {
                     $singleData[$field->getKey()] = $field->getData()[$i];
@@ -45,7 +46,7 @@ class Dataset
     {
         $schemaData = [
             'fields'    => [],
-            'unique_by' => []
+            'unique_by' => [],
         ];
 
         if (!$this->schema()->isEmpty()) {
@@ -59,18 +60,18 @@ class Dataset
         }
 
         $currentConfig = Yaml::parse(file_get_contents(config('geckoboard.datasets_config')));
-        $fieldSQL      = $this->isSQL ? "sql" : "standard";
-        $newConfig     = [];
+        $fieldSQL = $this->isSQL ? "sql" : "standard";
+        $newConfig = [];
 
         $newConfig[$this->datasetID] = [
             'type'   => $fieldSQL,
-            'schema' => []
+            'schema' => [],
         ];
 
         foreach ($this->schema()->get() as $field) {
             $newConfig[$this->datasetID]['schema'][$field->getKey()] = [
                 'type' => $field->getType(),
-                'name' => $field->getName()
+                'name' => $field->getName(),
             ];
 
             if ($field->isUnique) {
@@ -94,7 +95,7 @@ class Dataset
     protected function getFieldObject($dataset, $type)
     {
         $fieldsNamespace = $dataset instanceof Dataset ?
-            "Mare06xa\Geckoboard\Classes\Datasets\Fields\\"   :
+            "Mare06xa\Geckoboard\Classes\Datasets\Fields\\" :
             "Mare06xa\Geckoboard\Classes\DatasetsSQL\Fields\\";
 
         switch ($type) {
@@ -222,7 +223,7 @@ class Dataset
         }
 
         $putData = [
-            'data' => []
+            'data' => [],
         ];
 
         return $client->put($this->datasetID, $putData);

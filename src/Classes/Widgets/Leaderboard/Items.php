@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Leaderboard;
 
-
 use Mare06xa\Geckoboard\Enums\Format;
 use Mare06xa\Geckoboard\Enums\SortOrder;
 
@@ -11,7 +10,6 @@ class Items
     protected $items;
     protected $unit;
     protected $format = Format::DECIMAL;
-
 
     public function setFormat($format)
     {
@@ -44,9 +42,9 @@ class Items
     public function add($value, $label, $previousRank = "")
     {
         $this->items[] = [
-            'label'  => $label,
-            'value'  => $value,
-            'previous_rank' => $previousRank
+            'label'         => $label,
+            'value'         => $value,
+            'previous_rank' => $previousRank,
         ];
 
         return $this;
@@ -74,11 +72,8 @@ class Items
 
     public function sort($order = SORT_DESC)
     {
-        usort($this->items, function($item1, $item2) use ($order) {
-            return $order === SORT_ASC ?
-                $item1['value'] >= $item2['value']:
-                $item1['value'] <= $item2['value'];
-
+        usort($this->items, function ($item1, $item2) use ($order) {
+            return $order === SORT_ASC ? $item1['value'] >= $item2['value'] : $item1['value'] <= $item2['value'];
         });
     }
 }

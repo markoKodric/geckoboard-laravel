@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Map;
 
-
 class Points
 {
     protected $points;
@@ -17,7 +16,7 @@ class Points
             ->get();
 
         $this->point = [
-            'city'  => $cityData
+            'city' => $cityData,
         ];
 
         return $this;
@@ -27,7 +26,7 @@ class Points
     {
         $this->point = [
             'latitude'  => $latitude,
-            'longitude' => $longitude
+            'longitude' => $longitude,
         ];
 
         return $this;
@@ -36,7 +35,7 @@ class Points
     public function prepareHost($hostname)
     {
         $this->point = [
-            'host' => $hostname
+            'host' => $hostname,
         ];
 
         return $this;
@@ -45,7 +44,7 @@ class Points
     public function prepareIP($ipAddress)
     {
         $this->point = [
-            'ip' => $ipAddress
+            'ip' => $ipAddress,
         ];
 
         return $this;

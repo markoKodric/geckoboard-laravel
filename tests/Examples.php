@@ -2,15 +2,14 @@
 
 namespace Mare06xa\Geckoboard\src\Examples;
 
-
 use Carbon\Carbon;
-use Mare06xa\Geckoboard\Classes\Widgets\BulletGraph\Item\BulletGraphItem;
-use Mare06xa\Geckoboard\Enums\Format;
-use Mare06xa\Geckoboard\Enums\MonitoringStatus;
-use Mare06xa\Geckoboard\Enums\Orientation;
-use Mare06xa\Geckoboard\Enums\TextType;
 use Mare06xa\Geckoboard\Geckoboard;
+use Mare06xa\Geckoboard\Enums\Format;
 use Mare06xa\Geckoboard\Helpers\Data;
+use Mare06xa\Geckoboard\Enums\TextType;
+use Mare06xa\Geckoboard\Enums\Orientation;
+use Mare06xa\Geckoboard\Enums\MonitoringStatus;
+use Mare06xa\Geckoboard\Classes\Widgets\BulletGraph\Item\BulletGraphItem;
 
 class Examples
 {
@@ -21,7 +20,8 @@ class Examples
         $barChart->xAxis()->setLabels(Data::getMonths());
 
         $randomGoals = [];
-        $randomData  = [];
+        $randomData = [];
+
         for ($i = 0; $i < 12; $i++) {
             $randomGoals[] = rand(70000, 99000);
             $randomData[]  = rand(30000, 99000);
@@ -29,7 +29,7 @@ class Examples
 
         $barChart->yAxis()
             ->addData($randomGoals, "Plan [€]")
-            ->addData($randomData,  "Realizacija [€]")
+            ->addData($randomData, "Realizacija [€]")
             ->setFormat(Format::CURRENCY)
             ->setCurrency("EUR");
 
@@ -40,7 +40,9 @@ class Examples
     {
         $lineChart = Geckoboard::lineChart('17795-6743b590-11ad-0137-3659-0230f42b8e84');
 
-        $lineChart->xAxis()->setFormat(Format::DATETIME_ISO_8601);
+        $lineChart->xAxis()
+            ->setFormat(Format::DATETIME_ISO_8601);
+
         $lineChart->yAxis()
             ->setFormat(Format::CURRENCY)
             ->setCurrency("EUR")
@@ -54,14 +56,13 @@ class Examples
     {
         $geckoMeter = Geckoboard::geckoMeter("");
 
-        $geckoMeter
-            ->value(23)
+        $geckoMeter->value(23)
             ->min(0)
             ->max(100);
 
         $geckoMeter->push();
     }
-    
+
     public function numberSecondaryStatExample()
     {
         $numberStat = Geckoboard::numberSecondaryStat("17795-293c6db0-1030-0137-49dd-0ef5e78138a6");
@@ -79,37 +80,35 @@ class Examples
 
         $itemNo1 = new BulletGraphItem();
 
-        $itemNo1
-            ->setLabel("Revenue 2014 YTD")
+        $itemNo1->setLabel("Revenue 2014 YTD")
             ->setAxisData([0, 200, 400, 600, 800, 1000]);
-        $itemNo1
-            ->range()
+
+        $itemNo1->range()
             ->red(0, 400)
             ->amber(401, 700)
             ->green(701, 1000);
-        $itemNo1
-            ->measure()
+
+        $itemNo1->measure()
             ->current(0, 400)
             ->projected(100, 900);
-        $itemNo1
-            ->setComparative(600);
+
+        $itemNo1->setComparative(600);
 
         $itemNo2 = new BulletGraphItem();
 
-        $itemNo2
-            ->setLabel("Revenue 2015 YTD")
+        $itemNo2->setLabel("Revenue 2015 YTD")
             ->setAxisData([0, 200, 400, 600, 800, 1000]);
-        $itemNo2
-            ->range()
+
+        $itemNo2->range()
             ->red(0, 400)
             ->amber(401, 700)
             ->green(701, 1000);
-        $itemNo2
-            ->measure()
+
+        $itemNo2->measure()
             ->current(0, 400)
             ->projected(100, 900);
-        $itemNo2
-            ->setComparative(600);
+
+        $itemNo2->setComparative(600);
 
         $bulletGraph->items()
             ->add($itemNo1)
@@ -138,8 +137,8 @@ class Examples
     public function monitoringExample()
     {
         $monitoring = Geckoboard::monitoring('');
-        $monitoring
-            ->status(MonitoringStatus::UP)
+
+        $monitoring->status(MonitoringStatus::UP)
             ->downTime("9 days ago")
             ->msResponseTime(593);
 
@@ -149,6 +148,7 @@ class Examples
     public function textExample()
     {
         $text = Geckoboard::text("");
+
         $text->items()
             ->add("Unfortunately, as you probably already know, people")
             ->add("As you might know, I am a full time Internet", TextType::ALERT);

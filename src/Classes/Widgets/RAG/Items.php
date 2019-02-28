@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\RAG;
 
-
 class Items
 {
     protected $items;
@@ -13,7 +12,7 @@ class Items
     {
         $this->items[] = [
             'value' => $value,
-            'text'  => $text
+            'text'  => $text,
         ];
 
         return $this;
@@ -23,7 +22,7 @@ class Items
     {
         $this->items[] = [
             'value' => $value,
-            'text'  => $text
+            'text'  => $text,
         ];
 
         return $this;
@@ -33,7 +32,7 @@ class Items
     {
         $this->items[] = [
             'value' => $value,
-            'text'  => $text
+            'text'  => $text,
         ];
 
         return $this;

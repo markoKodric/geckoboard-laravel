@@ -2,13 +2,13 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\NumberSecondaryStat;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 
 class NumberSecondaryStat extends Widget
 {
     protected $items;
+
     protected $rules = [
         'item'          => 'required|array',
         'item.*.value'  => 'required|numeric',
@@ -17,7 +17,7 @@ class NumberSecondaryStat extends Widget
         'item.*.type'   => 'string|in:time_duration,text',
         'type'          => 'string|in:reverse',
         'absolute'      => 'boolean',
-        'responseTime'  => 'string'
+        'responseTime'  => 'string',
     ];
 
     public function __construct()
@@ -32,7 +32,7 @@ class NumberSecondaryStat extends Widget
     protected function prepareData(): array
     {
         $widgetData = [
-            'item' => $this->items->getItems()
+            'item' => $this->items->getItems(),
         ];
 
         if ($this->items->isReverse()) {

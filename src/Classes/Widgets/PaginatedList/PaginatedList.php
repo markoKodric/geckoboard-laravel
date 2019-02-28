@@ -2,22 +2,21 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\PaginatedList;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 
 class PaginatedList extends Widget
 {
     protected $items;
+
     protected $rules = [
         '*.title'       => 'required|array',
         '*.title.text'  => 'required|string',
         '*.label'       => 'array',
         '*.label.name'  => 'string',
         '*.label.color' => 'string',
-        '*.description' => 'string'
+        '*.description' => 'string',
     ];
-
 
     public function __construct()
     {

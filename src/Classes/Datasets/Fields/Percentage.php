@@ -2,18 +2,17 @@
 
 namespace Mare06xa\Geckoboard\Classes\Datasets\Fields;
 
-
 use Mare06xa\Geckoboard\Abstracts\DatasetField;
 
 class Percentage extends DatasetField
 {
     public function __construct()
     {
-        $this->type  = self::PERCENTAGE;
+        $this->type = self::PERCENTAGE;
 
         $this->rules = [
             $this->name => 'number',
-            'optional'  => 'boolean'
+            'optional'  => 'boolean',
         ];
     }
 

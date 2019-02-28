@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Funnel;
 
-
 class Items
 {
     protected $items;
@@ -17,8 +16,8 @@ class Items
     public function add($value, $label = "", $percentageHidden = false)
     {
         $item = [
-            'value'  => $value,
-            'label'  => $label
+            'value' => $value,
+            'label' => $label,
         ];
 
         if ($percentageHidden) {

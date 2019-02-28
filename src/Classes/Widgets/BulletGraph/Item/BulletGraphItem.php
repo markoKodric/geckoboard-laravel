@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\BulletGraph\Item;
 
-
 class BulletGraphItem
 {
     protected $label;

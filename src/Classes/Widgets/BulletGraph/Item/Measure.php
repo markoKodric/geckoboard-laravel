@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\BulletGraph\Item;
 
-
 class Measure
 {
     protected $current;
@@ -12,7 +11,7 @@ class Measure
     {
         $this->current = [
             'start' => $start,
-            'end'   => $end
+            'end'   => $end,
         ];
 
         return $this;
@@ -22,7 +21,7 @@ class Measure
     {
         $this->projected = [
             'start' => $start,
-            'end'   => $end
+            'end'   => $end,
         ];
 
         return $this;
@@ -32,7 +31,7 @@ class Measure
     {
         return [
             'current'   => $this->current,
-            'projected' => $this->projected
+            'projected' => $this->projected,
         ];
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Abstracts;
 
-
 abstract class DatasetFieldSQL
 {
     protected $key;
@@ -71,7 +70,7 @@ abstract class DatasetFieldSQL
     {
         return [
             'type' => $this->getType(),
-            'name' => $this->getName()
+            'name' => $this->getName(),
         ];
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Helpers;
 
-
 use Carbon\Carbon;
 
 class Data
@@ -12,7 +11,7 @@ class Data
         $months = [];
 
         for ($i = 1; $i <= 12; $i++) {
-            $months[] =  Carbon::parse('2018-' . $i . '-1')->format("M");
+            $months[] = Carbon::parse('2018-' . $i . '-1')->format("M");
         }
 
         return $months;

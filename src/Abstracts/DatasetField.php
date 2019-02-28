@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Abstracts;
 
-
 use Mare06xa\Geckoboard\Classes\Validations\DatasetFieldValidator;
 
 abstract class DatasetField extends DatasetFieldSQL

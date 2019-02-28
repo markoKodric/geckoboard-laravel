@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Helpers;
 
-
 use GuzzleHttp\Client;
 
 class WidgetClient
@@ -19,7 +18,7 @@ class WidgetClient
         }
 
         $this->geckoClient = new Client([
-            'base_uri' => $baseURI
+            'base_uri' => $baseURI,
         ]);
     }
 
@@ -41,11 +40,11 @@ class WidgetClient
     public function push($widgetID, $widgetData)
     {
         $postData['api_key'] = $this->apiToken !== null ? $this->apiToken : env("GECKO_TOKEN");
-        $postData['data']    = $widgetData;
+        $postData['data'] = $widgetData;
 
         try {
             $response = $this->geckoClient->post($widgetID, [
-                "json" => $postData
+                "json" => $postData,
             ]);
         } catch (\Exception $exception) {
             $response = $exception;

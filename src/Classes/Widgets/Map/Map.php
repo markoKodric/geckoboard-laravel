@@ -2,13 +2,13 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Map;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 
 class Map extends Widget
 {
     protected $items;
+
     protected $rules = [
         'points'                           => 'required|array',
         'points.point'                     => 'required|array',
@@ -37,7 +37,7 @@ class Map extends Widget
     {
         $widgetData = [
             "points" => [
-                "point" => $this->points()->get()
+                "point" => $this->points()->get(),
             ]
         ];
 

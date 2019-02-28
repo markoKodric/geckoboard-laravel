@@ -2,23 +2,21 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Leaderboard;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
-use Mare06xa\Geckoboard\Classes\Validations\LeaderboardValidator;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
+use Mare06xa\Geckoboard\Classes\Validations\LeaderboardValidator;
 
 class Leaderboard extends Widget
 {
     protected $items;
+
     protected $rules = [
         'format'                => 'required|string|in:decimal,percent,currency',
         'unit'                  => 'string|size:3',
         'items'                 => 'required|array',
         'items.*.label'         => 'required|string',
         'items.*.previous_rank' => 'numeric',
-
     ];
-
 
     public function __construct()
     {
@@ -35,7 +33,7 @@ class Leaderboard extends Widget
 
         $widgetData = [
             'format' => $this->items->getFormat(),
-            'items'  => $this->items->getItems()
+            'items'  => $this->items->getItems(),
         ];
 
         if ($this->items->isCurrency()) {
@@ -53,7 +51,7 @@ class Leaderboard extends Widget
 
 
         for ($i = 0; $i < count($items); $i++) {
-            if($items[$i]['previous_rank'] == "") {
+            if ($items[$i]['previous_rank'] == "") {
                 array_forget($items[$i], 'previous_rank');
             } else {
                 $items[$i]['previous_rank'] = intval($items[$i]['previous_rank']);

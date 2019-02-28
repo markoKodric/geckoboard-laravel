@@ -2,10 +2,9 @@
 
 namespace Mare06xa\Geckoboard\Factories;
 
-
+use Symfony\Component\Yaml\Yaml;
 use Mare06xa\Geckoboard\Classes\Datasets\Dataset;
 use Mare06xa\Geckoboard\Classes\DatasetsSQL\DatasetSQL;
-use Symfony\Component\Yaml\Yaml;
 
 class GeckoboardDatasetFactory
 {
@@ -63,7 +62,7 @@ class GeckoboardDatasetFactory
     protected function getFieldObject($dataset, $type)
     {
         $fieldsNamespace = $dataset instanceof Dataset ?
-            "Mare06xa\Geckoboard\Classes\Datasets\Fields\\"   :
+            "Mare06xa\Geckoboard\Classes\Datasets\Fields\\" :
             "Mare06xa\Geckoboard\Classes\DatasetsSQL\Fields\\";
 
         switch ($type) {

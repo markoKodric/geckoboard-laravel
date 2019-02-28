@@ -68,17 +68,17 @@ class SomeClass
         $dataset = Geckoboard::datasetAPI()->createDataset('testing.id');
 
         $dataset->schema()
-                ->addNumber()
-                ->setKey('amount')
-                ->setName('Amount')
-                ->addData([819, 409, 164, 180]);
+            ->addNumber()
+            ->setKey('amount')
+            ->setName('Amount')
+            ->addData([819, 409, 164, 180]);
 
         $dataset->schema()
-                ->addDatetime()
-                ->setKey('timestamp')
-                ->setName('Date')
-                ->addData(["2018-01-01T12:00:00Z", "2018-01-02T12:00:00Z", "2018-01-03T12:00:00Z"])
-                ->isUnique();
+            ->addDatetime()
+            ->setKey('timestamp')
+            ->setName('Date')
+            ->addData(["2018-01-01T12:00:00Z", "2018-01-02T12:00:00Z", "2018-01-03T12:00:00Z"])
+            ->isUnique();
 
         $apiResponse1 = $dataset->applySchema();
         $apiResponse2 = $dataset->appendData();
@@ -95,23 +95,23 @@ class SomeClass
     public function foo()
     {
         $sqlDataset = Geckoboard::datasetAPI()
-                                ->withDB()
-                                ->createDataset('testing.id');
+            ->withDB()
+            ->createDataset('testing.id');
 
         $sqlDataset->schema()
-                   ->addNumber()
-                   ->setKey('amount')
-                   ->setName('Amount');
+           ->addNumber()
+           ->setKey('amount')
+           ->setName('Amount');
 
         $sqlDataset->schema()
-                   ->addNumber()
-                   ->setKey('amount2')
-                   ->setName('Amount 2');
+           ->addNumber()
+           ->setKey('amount2')
+           ->setName('Amount 2');
 
         $sqlDataset->schema()
-                   ->addString()
-                   ->setKey('desc')
-                   ->setName('Description');
+           ->addString()
+           ->setKey('desc')
+           ->setName('Description');
 
         // Set DB connection driver (optional)
         $sqlDataset->setDB('mysql');
@@ -169,15 +169,15 @@ dataset.testid:
 $configPath = config('geckoboard.datasets_config');
 $datasetID  = "testing.id";
 
-$sqlDataset = Geckoboard::datasetAPI()
-                        ->loadDatasetFromFile($configPath, $datasetID);
+$sqlDataset = Geckoboard::datasetAPI()->loadDatasetFromFile($configPath, $datasetID);
 
 $dbData = $sqlDataset
-            ->dbQuery()
-            ->table('test_table')
-            ->get(['col1', 'col2', 'col3']);
+    ->dbQuery()
+    ->table('test_table')
+    ->get(['col1', 'col2', 'col3']);
 
 $sqlDataset->setData($dbData);
+
 $apiResponse = $sqlDataset->replaceData();
 ```
 
@@ -200,7 +200,7 @@ class SomeClass
         $widget->setApiToken($apiToken);
         
         $widget->firstMethod()
-               ->secondMethod();
+            ->secondMethod();
         
         $apiResponse = $widget->push();
     }
@@ -220,32 +220,32 @@ $apiResponse = $barChart->push();
 ```php
 // Standard format
 $barChart->xAxis()
-         ->setLabels("January", "February", "March");
+    ->setLabels("January", "February", "March");
 
 // Datetime format
 $barChart->xAxis()
-         ->setFormat(Format::DATETIME_ISO_8601)
-         ->setLabels("2019-01-01", "2019-01-02"); // Also accepts date in format "Y-m" => "2019-12"
-         ->addLabel("2019-01-03")
+    ->setFormat(Format::DATETIME_ISO_8601)
+    ->setLabels("2019-01-01", "2019-01-02"); // Also accepts date in format "Y-m" => "2019-12"
+    ->addLabel("2019-01-03")
 ```
 
 **Y axis**
 ```php
 // Decimal format
 $barChart->yAxis()
-         ->addData($numberArray, "Data Label 1");
+    ->addData($numberArray, "Data Label 1");
 
 // Currency format
 $barChart->yAxis()
-         ->addData($numberArray,  "Data Label 1")
-         ->addData($numberArray2, "Data Label 2")
-         ->setFormat(Format::CURRENCY)
-         ->setCurrency("USD");
+    ->addData($numberArray,  "Data Label 1")
+    ->addData($numberArray2, "Data Label 2")
+    ->setFormat(Format::CURRENCY)
+    ->setCurrency("USD");
     
 // Percentage format
 $barChart->yAxis()
-         ->addData($numberArray, "Data Label 1")
-         ->setFormat(Format::PERCENT);
+    ->addData($numberArray, "Data Label 1")
+    ->setFormat(Format::PERCENT);
 ```
 
 ## Bullet Graph
@@ -257,21 +257,21 @@ $bulletGraph->setOrientation(Orientation::HORIZONTAL);
 $itemNo1 = new BulletGraphItem();
 
 $itemNo1->setLabel("Revenue 2014 YTD")
-        ->setAxisData([0, 200, 400, 600, 800, 1000]);
+    ->setAxisData([0, 200, 400, 600, 800, 1000]);
     
 $itemNo1->range()
-        ->red(0, 400)
-        ->amber(401, 700)
-        ->green(701, 1000);
+    ->red(0, 400)
+    ->amber(401, 700)
+    ->green(701, 1000);
     
 $itemNo1->measure()
-        ->current(0, 400)
-        ->projected(100, 900);
+    ->current(0, 400)
+    ->projected(100, 900);
     
 $itemNo1->setComparative(600);
     
 $bulletGraph->items()
-            ->add($itemNo1);
+    ->add($itemNo1);
 
 $apiResponse = $bulletGraph->push();
 ```
@@ -281,14 +281,14 @@ $apiResponse = $bulletGraph->push();
 $funnel = Geckoboard::widgetAPI()->funnel($widgetID);
 
 $funnel->items()
-       ->add(87809, "Step 1")
-       ->add(70022, "Step 2")
-       ->add(63232, "Step 3")
-       ->add(53232, "Step 4")
-       ->add(32123, "Step 5")
-       ->add(23232, "Step 6")
-       ->add(12232, "Step 7")
-       ->add(10001, "Step 8");
+    ->add(87809, "Step 1")
+    ->add(70022, "Step 2")
+    ->add(63232, "Step 3")
+    ->add(53232, "Step 4")
+    ->add(32123, "Step 5")
+    ->add(23232, "Step 6")
+    ->add(12232, "Step 7")
+    ->add(10001, "Step 8");
 
 $apiResponse = $funnel->push();
 ```
@@ -298,8 +298,8 @@ $apiResponse = $funnel->push();
 $geckoMeter = Geckoboard::widgetAPI()->geckoMeter($widgetID);
 
 $geckoMeter->value(23)
-           ->min(0)
-           ->max(100);
+    ->min(0)
+    ->max(100);
 
 $apiResponse = $geckoMeter->push();
 ```
@@ -307,25 +307,23 @@ $apiResponse = $geckoMeter->push();
 ## Leaderboard
 ```php
 $leaderBoard = Geckoboard::widgetAPI()->leaderBoard($widgetID);
-$leaderBoard->items()
-            ->setFormat(Format::PERCENT);
 
-for($i = 0; $i < 25; $i++) {
-    $value    = $faker->randomFloat(4, 0.01, 0.09);
-    $label    = ucfirst($faker->word);
+$leaderBoard->items()->setFormat(Format::PERCENT);
+
+for ($i = 0; $i < 25; $i++) {
+    $value = $faker->randomFloat(4, 0.01, 0.09);
+    $label = ucfirst($faker->word);
     $prevRank = $faker->numberBetween(0, 25);
 
     if ($faker->boolean(50)) {
-        $leaderBoard->items()
-                    ->add($value, $label);
+        $leaderBoard->items()->add($value, $label);
     } else {
-        $leaderBoard->items()
-                    ->add($value, $label, $prevRank);
+        $leaderBoard->items()->add($value, $label, $prevRank);
     }
 }
 
-$leaderBoard->items()  // Sort by value in descending order...
-            ->sort();  // To sort in ascending order, pass argument SORT_ASC... 
+$leaderBoard->items()   // Sort by value in descending order...
+    ->sort();           // To sort in ascending order, pass argument SORT_ASC... 
 
 $apiResponse = $leaderBoard->push();
 ```
@@ -335,13 +333,13 @@ $apiResponse = $leaderBoard->push();
 $lineChart = Geckoboard::widgetAPI()->lineChart($widgetID);
 
 $lineChart->xAxis()
-          ->setFormat(Format::DATETIME_ISO_8601);
+    ->setFormat(Format::DATETIME_ISO_8601);
           
 $lineChart->yAxis()
-          ->setFormat(Format::CURRENCY)
-          ->setCurrency("EUR")
-          ->addLine([1, 2, 3, 4, 5], 'Profit [€]',   Carbon::now()->addDay()->format('Y-m-d'))
-          ->addLine([2, 3, 4, 5, 6], 'Expenses [€]', Carbon::now()->addDay()->format('Y-m-d'));
+    ->setFormat(Format::CURRENCY)
+    ->setCurrency("EUR")
+    ->addLine([1, 2, 3, 4, 5], 'Profit [€]', Carbon::now()->addDay()->format('Y-m-d'))
+    ->addLine([2, 3, 4, 5, 6], 'Expenses [€]', Carbon::now()->addDay()->format('Y-m-d'));
 
 $apiResponse = $lineChart->push();
 ```
@@ -351,11 +349,11 @@ $apiResponse = $lineChart->push();
 $list = Geckoboard::widgetAPI()->list($widgetID);
 
 $list->items()
-     ->add("Chrome",  "40327 visits", "New!")
-     ->add("Safari",  "11577 visits", "New!", "#00FF00")
-     ->add("Firefox", "10295 visits")
-     ->add("MS Edge", "3578 visits")
-     ->add("Opera",   "499 visits");
+    ->add("Chrome", "40327 visits", "New!")
+    ->add("Safari", "11577 visits", "New!", "#00FF00")
+    ->add("Firefox", "10295 visits")
+    ->add("MS Edge", "3578 visits")
+    ->add("Opera", "499 visits");
 
 $apiResponse = $list->push();
 ```
@@ -401,8 +399,8 @@ $apiResponse = $map->push();
 $monitoring = Geckoboard::widgetAPI()->monitoring($widgetID);
 
 $monitoring->status(MonitoringStatus::UP)
-           ->downTime("9 days ago")
-           ->msResponseTime(593);
+    ->downTime("9 days ago")
+    ->msResponseTime(593);
 
 $apiResponse = $monitoring->push();
 ```
@@ -412,7 +410,7 @@ $apiResponse = $monitoring->push();
 $numberStat = Geckoboard::widgetAPI()->numberSecondaryStat($widgetID);
 
 $numberStat->items()
-           ->add(700000, "", "€");
+    ->add(700000, "", "€");
 
 $apiResponse = $numberStat->push();
 ```
@@ -422,10 +420,10 @@ $apiResponse = $numberStat->push();
 $pieChart = Geckoboard::widgetAPI()->pieChart($widgetID);
 
 $pieChart->items()
-         ->add(100, "May", "#13699C")
-         ->add(160, "June", "#198ACD")
-         ->add(300, "July", "#60B8EC")
-         ->add(140, "August", "#A4D7F4");
+    ->add(100, "May", "#13699C")
+    ->add(160, "June", "#198ACD")
+    ->add(300, "July", "#60B8EC")
+    ->add(140, "August", "#A4D7F4");
 
 $apiResponse = $pieChart->push();
 ```
@@ -449,8 +447,8 @@ $apiResponse = $RAG->push();
 $text = Geckoboard::widgetAPI()->text($widgetID);
 
 $text->items()
-     ->add("Unfortunately, as you probably already know, people")
-     ->add("As you might know, I am a full time Internet", TextType::ALERT);
+    ->add("Unfortunately, as you probably already know, people")
+    ->add("As you might know, I am a full time Internet", TextType::ALERT);
 
 $apiResponse = $text->push();
 ```
