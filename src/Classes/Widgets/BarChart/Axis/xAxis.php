@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\BarChart\Axis;
 
-
 class xAxis
 {
     protected $labels;

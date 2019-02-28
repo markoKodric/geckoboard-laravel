@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Text;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 use Mare06xa\Geckoboard\Classes\Validations\TextValidator;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
@@ -10,10 +9,11 @@ use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 class Text extends Widget
 {
     protected $items;
+
     protected $rules = [
         'item'        => 'required|array',
         'item.*.text' => 'required|string',
-        'item.*.type' => 'integer|between:0,2'
+        'item.*.type' => 'integer|between:0,2',
     ];
 
 
@@ -29,7 +29,7 @@ class Text extends Widget
     protected function prepareData(): array
     {
         $preparedData = [
-            'item' => $this->items()->get()
+            'item' => $this->items()->get(),
         ];
 
         $this->validateData(new WidgetValidator($preparedData, $this->rules));

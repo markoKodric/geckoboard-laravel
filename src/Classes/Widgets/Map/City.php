@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Map;
 
-
 class City
 {
     protected $name;
@@ -38,12 +37,11 @@ class City
     protected function toArray()
     {
         $city = [
-            'city_name' => $this->name,
+            'city_name'    => $this->name,
             'country_code' => $this->countryCode,
         ];
 
-        if ($this->regionCode !== null)
-        {
+        if ($this->regionCode !== null) {
             $city['region_code'] = $this->regionCode;
         }
 

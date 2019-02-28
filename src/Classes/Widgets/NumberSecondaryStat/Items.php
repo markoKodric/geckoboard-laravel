@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\NumberSecondaryStat;
 
-
 class Items
 {
     protected $items;
@@ -26,7 +25,7 @@ class Items
         $this->items[] = [
             'text'   => $text,
             'value'  => $value,
-            'prefix' => $prefix
+            'prefix' => $prefix,
         ];
 
         return $this;

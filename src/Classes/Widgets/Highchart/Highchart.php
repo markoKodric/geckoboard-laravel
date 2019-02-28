@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Highchart;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 
 class Highchart extends Widget
@@ -17,7 +16,7 @@ class Highchart extends Widget
     protected function prepareData(): array
     {
         return [
-            "highchart" => $this->highchartData
+            "highchart" => $this->highchartData,
         ];
     }
 

@@ -16,15 +16,14 @@ class DatasetSQL extends Dataset
         parent::__construct();
 
         $this->queryBuilder = DB::connection($this->dbDriver);
-        $this->isSQL        = true;
+        $this->isSQL = true;
     }
 
     protected function prepareData(): array
     {
         $fieldsData = [
-            'data' => []
+            'data' => [],
         ];
-
 
         foreach ($this->dbData->toArray() as $dataRow) {
             $singleData = [];
@@ -34,6 +33,7 @@ class DatasetSQL extends Dataset
                 if (count(array_values((array) $dataRow)) > $i) {
                     $singleData[$field->getKey()] = array_values((array) $dataRow)[$i];
                 }
+
                 $i++;
             }
 

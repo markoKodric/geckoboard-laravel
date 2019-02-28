@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Helpers;
 
-
 use GuzzleHttp\Client;
 
 class DatasetClient
@@ -19,7 +18,7 @@ class DatasetClient
         }
 
         $this->geckoClient = new Client([
-            'base_uri' => $baseURI
+            'base_uri' => $baseURI,
         ]);
     }
 
@@ -45,7 +44,7 @@ class DatasetClient
         try {
             $response = $this->geckoClient->put($datasetID, [
                 "auth" => [$apiToken, ''],
-                "json" => $datasetData
+                "json" => $datasetData,
             ]);
         } catch (\Exception $exception) {
             $response = $exception;
@@ -61,7 +60,7 @@ class DatasetClient
         try {
             $response = $this->geckoClient->put($datasetID . '/data', [
                 "auth" => [$apiToken, ''],
-                "json" => $datasetData
+                "json" => $datasetData,
             ]);
         } catch (\Exception $exception) {
             $response = $exception;
@@ -77,7 +76,7 @@ class DatasetClient
         try {
             $response = $this->geckoClient->post($datasetID . '/data', [
                 "auth" => [$apiToken, ''],
-                "json" => $datasetData
+                "json" => $datasetData,
             ]);
         } catch (\Exception $exception) {
             $response = $exception;

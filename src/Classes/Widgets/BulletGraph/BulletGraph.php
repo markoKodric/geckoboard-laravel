@@ -2,16 +2,16 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\BulletGraph;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
-use Mare06xa\Geckoboard\Classes\Validations\BulletGraphValidator;
-use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 use Mare06xa\Geckoboard\Enums\Orientation;
+use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
+use Mare06xa\Geckoboard\Classes\Validations\BulletGraphValidator;
 
 class BulletGraph extends Widget
 {
     protected $items;
     protected $orientation = Orientation::HORIZONTAL;
+
     protected $rules = [
         'orientation'                => 'required|string|in:horizontal,vertical',
         'item'                       => 'required|array',
@@ -45,7 +45,7 @@ class BulletGraph extends Widget
     {
         $widgetData = [
             'orientation' => $this->orientation,
-            'item' => []
+            'item'        => [],
         ];
 
         foreach ($this->items->getItems() as $item) {
@@ -53,15 +53,17 @@ class BulletGraph extends Widget
 
             $itemData['label'] = $item->getLabel();
 
-            if ($item->getSublabel() !== null)
+            if ($item->getSublabel() !== null) {
                 $itemData['sublabel'] = $item->getSublabel();
+            }
 
             $itemData['axis']['point'] = $item->getAxisData();
-            $itemData['range']   = $item->range()->toArray();
+            $itemData['range'] = $item->range()->toArray();
             $itemData['measure'] = $item->measure()->toArray();
 
-            if ($item->getComparative() !== null)
+            if ($item->getComparative() !== null) {
                 $itemData['comparative']['point'] = $item->getComparative();
+            }
 
             $widgetData['item'][] = $itemData;
         }

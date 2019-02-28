@@ -1,12 +1,11 @@
 <?php
-namespace Mare06xa\Geckoboard;
 
+namespace Mare06xa\Geckoboard;
 
 use Illuminate\Support\ServiceProvider;
 
 class GeckoboardServiceProvider extends ServiceProvider
 {
-
     /**
      * Perform post-registration booting of services.
      *

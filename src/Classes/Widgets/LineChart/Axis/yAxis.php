@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\LineChart\Axis;
 
-
 use Mare06xa\Geckoboard\Enums\Format;
 
 class yAxis
@@ -28,7 +27,7 @@ class yAxis
     public function setCurrency($unit)
     {
         $this->format = Format::CURRENCY;
-        $this->unit   = $unit;
+        $this->unit = $unit;
 
         return $this;
     }
@@ -57,9 +56,9 @@ class yAxis
     public function addLine($data, $name, $incompleteFrom = "")
     {
         $this->data[] = [
-            "name" => $name,
-            "data" => $data,
-            "incomplete_from" => $incompleteFrom
+            "name"            => $name,
+            "data"            => $data,
+            "incomplete_from" => $incompleteFrom,
         ];
 
         return $this;

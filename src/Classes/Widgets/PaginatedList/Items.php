@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\PaginatedList;
 
-
 class Items
 {
     protected $items;
@@ -11,7 +10,7 @@ class Items
     {
         $item = [
             'title' => [
-                'text' => $text
+                'text' => $text,
             ]
         ];
 
@@ -22,7 +21,7 @@ class Items
         if ($labelBefore !== "") {
             $item['label'] = [
                 'name'  => $labelBefore,
-                'color' => $labelColor
+                'color' => $labelColor,
             ];
         }
 

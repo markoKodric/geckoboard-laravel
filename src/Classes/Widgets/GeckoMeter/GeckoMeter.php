@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\GeckoMeter;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 use Mare06xa\Geckoboard\Classes\Validations\FunnelValidator;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
@@ -10,6 +9,7 @@ use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 class GeckoMeter extends Widget
 {
     protected $item;
+
     protected $rules = [
         'item'      => 'required|numeric',
         'min'       => 'required|array',
@@ -18,7 +18,6 @@ class GeckoMeter extends Widget
         'max.value' => 'required|numeric',
         'format'    => 'string|in:percent,currency',
         'unit'      => 'string|size:3',
-
     ];
 
     public function __construct()

@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Abstracts;
 
-
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 use Mare06xa\Geckoboard\Helpers\WidgetClient;
 
@@ -11,8 +10,8 @@ abstract class Widget
     protected $widgetID;
     protected $apiToken;
 
+    abstract public function __construct();
 
-    abstract public    function __construct();
     abstract protected function prepareData(): array;
 
     /**
@@ -66,7 +65,7 @@ abstract class Widget
      */
     function push()
     {
-        $pusher   = new WidgetClient();
+        $pusher = new WidgetClient();
 
         if ($this->apiToken !== null) {
             $pusher->setApiToken($this->apiToken);
