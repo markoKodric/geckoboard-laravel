@@ -30,6 +30,12 @@ In Laravel 5.5 and above the package will autoregister the facade. In Laravel 5.
     ...
 ];
 ```
+Create config file.
+
+```
+php artisan vendor:publish
+```
+Choose ```Mare06xa\Geckoboard\GeckoboardServiceProvider``` if prompted.
 
 # Configuration
 You will need API token from Geckoboard.
