@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Validations;
 
-
 use Illuminate\Support\Facades\Validator;
 
 class WidgetValidator

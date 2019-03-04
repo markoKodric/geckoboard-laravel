@@ -2,18 +2,17 @@
 
 namespace Mare06xa\Geckoboard\Classes\Datasets\Fields;
 
-
 use Mare06xa\Geckoboard\Abstracts\DatasetField;
 
 class Number extends DatasetField
 {
     public function __construct()
     {
-        $this->type  = self::NUMBER;
+        $this->type = self::NUMBER;
 
         $this->rules = [
             $this->name => 'number',
-            'optional'  => 'boolean'
+            'optional'  => 'boolean',
         ];
     }
 

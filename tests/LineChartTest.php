@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Tests;
 
-
 use TestCase;
 
 class LineChartTest extends TestCase

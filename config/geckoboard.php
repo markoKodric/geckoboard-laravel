@@ -4,7 +4,7 @@ return [
     /*
      * The domain of Widget Push API.
      */
-    'widget_api_domain' => 'https://push.geckoboard.com/v1/send/',
+    'widget_api_domain'  => 'https://push.geckoboard.com/v1/send/',
 
     /*
      * The domain of DatasetSQL API
@@ -14,5 +14,5 @@ return [
     /*
      * Datasets config file
      */
-    'datasets_config' => base_path('resources/configs/datasets.yaml'),
+    'datasets_config'    => base_path('resources/configs/datasets.yaml'),
 ];

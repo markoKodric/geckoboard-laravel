@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\BulletGraph\Item;
 
-
 class Range
 {
     protected $red;
@@ -13,7 +12,7 @@ class Range
     {
         $this->red = [
             'start' => $start,
-            'end'   => $end
+            'end'   => $end,
         ];
 
         return $this;
@@ -23,7 +22,7 @@ class Range
     {
         $this->amber = [
             'start' => $start,
-            'end'   => $end
+            'end'   => $end,
         ];
 
         return $this;
@@ -33,7 +32,7 @@ class Range
     {
         $this->green = [
             'start' => $start,
-            'end'   => $end
+            'end'   => $end,
         ];
 
         return $this;
@@ -44,7 +43,7 @@ class Range
         return [
             'red'   => $this->red,
             'amber' => $this->amber,
-            'green' => $this->green
+            'green' => $this->green,
         ];
     }
 }

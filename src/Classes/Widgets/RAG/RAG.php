@@ -2,13 +2,13 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\RAG;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 
 class RAG extends Widget
 {
     protected $items;
+
     protected $rules = [
         'item'         => 'required|array|between:2,5',
         'item.*.value' => 'numeric',
@@ -29,7 +29,7 @@ class RAG extends Widget
     protected function prepareData(): array
     {
         $widgetData = [
-            'item' => $this->items->get()
+            'item' => $this->items->get(),
         ];
 
         $this->validateData(new WidgetValidator($widgetData, $this->rules));

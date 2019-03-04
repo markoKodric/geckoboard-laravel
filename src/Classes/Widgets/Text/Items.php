@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Text;
 
-
 use Mare06xa\Geckoboard\Enums\TextType;
 
 class Items
@@ -13,7 +12,7 @@ class Items
     {
         $this->items[] = [
             "text" => $text,
-            "type" => $type
+            "type" => $type,
         ];
 
         return $this;

@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\Funnel;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 use Mare06xa\Geckoboard\Classes\Validations\FunnelValidator;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
@@ -10,6 +9,7 @@ use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 class Funnel extends Widget
 {
     protected $items;
+
     protected $rules = [
         'item'              => 'required|array',
         'item.*.value'      => 'required',
@@ -17,7 +17,6 @@ class Funnel extends Widget
         'item.*.percentage' => 'string|in:hide',
 
     ];
-
 
     public function __construct()
     {
@@ -31,7 +30,7 @@ class Funnel extends Widget
     protected function prepareData(): array
     {
         $widgetData = [
-            'item' => $this->items->getItems()
+            'item' => $this->items->getItems(),
         ];
 
         $this->validateData(new WidgetValidator($widgetData, $this->rules));

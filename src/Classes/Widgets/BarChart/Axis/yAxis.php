@@ -2,7 +2,6 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\BarChart\Axis;
 
-
 use Mare06xa\Geckoboard\Enums\Format;
 
 class yAxis
@@ -37,7 +36,7 @@ class yAxis
     public function setCurrency(string $unit)
     {
         $this->format = Format::CURRENCY;
-        $this->unit   = $unit;
+        $this->unit = $unit;
 
         return $this;
     }
@@ -61,7 +60,7 @@ class yAxis
     {
         $this->data[] = [
             "name" => $name,
-            "data" => $data
+            "data" => $data,
         ];
 
         return $this;

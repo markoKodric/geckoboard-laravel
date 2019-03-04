@@ -2,13 +2,13 @@
 
 namespace Mare06xa\Geckoboard\Classes\Widgets\PieChart;
 
-
 use Mare06xa\Geckoboard\Abstracts\Widget;
 use Mare06xa\Geckoboard\Classes\Validations\WidgetValidator;
 
 class PieChart extends Widget
 {
     protected $items;
+
     protected $rules = [
         'item'         => 'required|array',
         'item.*.value' => 'required|numeric',
@@ -28,7 +28,7 @@ class PieChart extends Widget
     protected function prepareData(): array
     {
         $widgetData = [
-            'item' => $this->items->get()
+            'item' => $this->items->get(),
         ];
 
         $this->validateData(new WidgetValidator($widgetData, $this->rules));
