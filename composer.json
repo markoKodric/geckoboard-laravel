@@ -17,15 +17,15 @@
     "autoload": {
         "psr-4": {
             "Mare06xa\\Geckoboard\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Mare06xa\\Geckoboard\\Tests\\": "tests"
         },
         "files": [
             "src/helpers/functions.php"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mare06xa\\Geckoboard\\Tests\\": "tests"
+        }
     },
     "extra": {
         "laravel": {

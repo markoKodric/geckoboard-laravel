@@ -26,6 +26,10 @@ class GeckoboardServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        if (!file_exists(__DIR__.'/../config')) {
+            mkdir(__DIR__.'/../config', 0755);
+        }
+
         $this->mergeConfigFrom(__DIR__.'/../config/geckoboard.php', 'geckoboard');
 
         // Register the service the package provides.
