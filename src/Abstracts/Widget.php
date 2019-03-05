@@ -75,4 +75,9 @@ abstract class Widget
 
         return $pusher->push($this->widgetID, $pushData);
     }
+
+    function toJSON()
+    {
+        return json_encode($this->prepareData(), true);
+    }
 }
