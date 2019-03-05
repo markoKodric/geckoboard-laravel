@@ -443,7 +443,7 @@ $apiResponse = $numberStat->push();
 
 ## Pie Chart
 ```php
-$pieChart = Geckoboard::widgetAPI()->pieChart($widgetID);
+$pieChart = Geckoboard::pushAPI()->pieChart($widgetID);
 
 $pieChart->items()
     ->add(100, "May", "#13699C")
