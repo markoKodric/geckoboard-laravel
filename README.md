@@ -220,7 +220,7 @@ class SomeClass
     public function foo()
     {
         // Widget ID is obtained on Geckoboard by clicking "Edit" in the widget options...
-        $widget = Geckoboard::widgetAPI()->widgetClass($widgetID);
+        $widget = Geckoboard::pushAPI()->widgetClass($widgetID);
         
         // Optionally you can set different API Token if you are working with multiple accounts...
         $widget->setApiToken($apiToken);
@@ -235,7 +235,7 @@ class SomeClass
 
 ## Bar Chart
 ```php
-$barChart = Geckoboard::widgetAPI()->barChart($widgetID);
+$barChart = Geckoboard::pushAPI()->barChart($widgetID);
 
 // ... set data
 
@@ -276,7 +276,7 @@ $barChart->yAxis()
 
 ## Bullet Graph
 ```php
-$bulletGraph = Geckoboard::widgetAPI()->bulletGraph($widgetID);
+$bulletGraph = Geckoboard::pushAPI()->bulletGraph($widgetID);
 
 $bulletGraph->setOrientation(Orientation::HORIZONTAL);
 
@@ -304,7 +304,7 @@ $apiResponse = $bulletGraph->push();
 
 ## Funnel
 ```php
-$funnel = Geckoboard::widgetAPI()->funnel($widgetID);
+$funnel = Geckoboard::pushAPI()->funnel($widgetID);
 
 $funnel->items()
     ->add(87809, "Step 1")
@@ -321,7 +321,7 @@ $apiResponse = $funnel->push();
 
 ## Geck-o-Meter
 ```php
-$geckoMeter = Geckoboard::widgetAPI()->geckoMeter($widgetID);
+$geckoMeter = Geckoboard::pushAPI()->geckoMeter($widgetID);
 
 $geckoMeter->value(23)
     ->min(0)
@@ -332,7 +332,7 @@ $apiResponse = $geckoMeter->push();
 
 ## Leaderboard
 ```php
-$leaderBoard = Geckoboard::widgetAPI()->leaderBoard($widgetID);
+$leaderBoard = Geckoboard::pushAPI()->leaderBoard($widgetID);
 
 $leaderBoard->items()->setFormat(Format::PERCENT);
 
@@ -356,7 +356,7 @@ $apiResponse = $leaderBoard->push();
 
 ## Line Chart
 ```php
-$lineChart = Geckoboard::widgetAPI()->lineChart($widgetID);
+$lineChart = Geckoboard::pushAPI()->lineChart($widgetID);
 
 $lineChart->xAxis()
     ->setFormat(Format::DATETIME_ISO_8601);
@@ -372,7 +372,7 @@ $apiResponse = $lineChart->push();
 
 ## List
 ```php
-$list = Geckoboard::widgetAPI()->list($widgetID);
+$list = Geckoboard::pushAPI()->list($widgetID);
 
 $list->items()
     ->add("Chrome", "40327 visits", "New!")
@@ -386,7 +386,7 @@ $apiResponse = $list->push();
 
 ## Map
 ```php
-$map = Geckoboard::widgetAPI()->map($widgetID);
+$map = Geckoboard::pushAPI()->map($widgetID);
 
 $map->points()
     ->prepareCity("London", "GB")
@@ -422,7 +422,7 @@ $apiResponse = $map->push();
 
 ## Monitoring
 ```php
-$monitoring = Geckoboard::widgetAPI()->monitoring($widgetID);
+$monitoring = Geckoboard::pushAPI()->monitoring($widgetID);
 
 $monitoring->status(MonitoringStatus::UP)
     ->downTime("9 days ago")
@@ -433,7 +433,7 @@ $apiResponse = $monitoring->push();
 
 ## Number and Secondary Stat
 ```php
-$numberStat = Geckoboard::widgetAPI()->numberSecondaryStat($widgetID);
+$numberStat = Geckoboard::pushAPI()->numberSecondaryStat($widgetID);
 
 $numberStat->items()
     ->add(700000, "", "€");
@@ -456,7 +456,7 @@ $apiResponse = $pieChart->push();
 
 ## RAG
 ```php
-$RAG = Geckoboard::widgetAPI()->RAG($widgetID);
+$RAG = Geckoboard::pushAPI()->RAG($widgetID);
 
 $RAG->items()
     ->first(16,  "Long past due")
@@ -470,7 +470,7 @@ $apiResponse = $RAG->push();
 
 ## Text
 ```php
-$text = Geckoboard::widgetAPI()->text($widgetID);
+$text = Geckoboard::pushAPI()->text($widgetID);
 
 $text->items()
     ->add("Unfortunately, as you probably already know, people")
