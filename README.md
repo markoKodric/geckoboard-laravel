@@ -1,6 +1,4 @@
-**Currently supports Widgets PUSH API and Datasets API.**
-
-**Highcharts support is coming soon.**
+**Currently supports Widgets PUSH API, Widgets POLLING API and Datasets API.**
 
 # Installation
 Require this package with [composer](http://getcomposer.org).
@@ -59,6 +57,28 @@ return [
 ];
 ```
 
+---
+
+# Widgets Polling API
+
+## Basic usage
+
+First setup your widget on Geckoboard.
+- Method: Polling
+- Data feed URL: <Your application URL>
+- Data feed format: JSON
+
+```php
+Route::get('test', function () {
+    $geckoMeter = Geckoboard::pollingAPI()->geckoMeter();
+
+    $geckoMeter->value(23)
+        ->min(0)
+        ->max(100);
+
+    return $geckoMeter->toJSON();
+});
+```
 ---
 
 # Datasets API
