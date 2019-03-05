@@ -65,7 +65,7 @@ return [
 
 First setup your widget on Geckoboard.
 - Method: Polling
-- Data feed URL: {Your application URL}
+- Data feed URL: {Your application URL with correct endpoint that returns JSON data}
 - Data feed format: JSON
 
 ```php
