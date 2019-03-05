@@ -209,7 +209,7 @@ $apiResponse = $sqlDataset->replaceData();
 
 ---
 
-# Widgets API
+# Widgets Push API
 
 ## Basic usage
 ```php
