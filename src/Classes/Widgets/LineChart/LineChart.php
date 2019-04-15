@@ -15,7 +15,7 @@ class LineChart extends Widget
     protected $rules = [
         'x_axis'                   => 'required|array',
         'x_axis.type'              => 'string|in:standard,datetime',
-        'x_axis.labels'            => 'required|array',
+        'x_axis.labels'            => 'array',
         'x_axis.labels.*'          => 'string',
         'y_axis'                   => 'required|array',
         'y_axis.format'            => 'required|string|in:decimal,percent,currency',
