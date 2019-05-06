@@ -19,7 +19,7 @@
             "Mare06xa\\Geckoboard\\": "src"
         },
         "files": [
-            "src/helpers/functions.php"
+            "src/Helpers/functions.php"
         ]
     },
     "autoload-dev": {
