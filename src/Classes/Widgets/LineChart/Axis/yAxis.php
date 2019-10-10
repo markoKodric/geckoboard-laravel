@@ -55,11 +55,18 @@ class yAxis
      */
     public function addLine($data, $name, $incompleteFrom = "")
     {
-        $this->data[] = [
-            "name"            => $name,
-            "data"            => $data,
-            "incomplete_from" => $incompleteFrom,
-        ];
+        if ($incompleteFrom && $incompleteFrom != "") {
+            $this->data[] = [
+                "name"            => $name,
+                "data"            => $data,
+                "incomplete_from" => $incompleteFrom,
+            ];
+        } else {
+            $this->data[] = [
+                "name"            => $name,
+                "data"            => $data
+            ];
+        }
 
         return $this;
     }
